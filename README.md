@@ -2,22 +2,20 @@
 
 ## Member
 
-| Mento | [김채은](https://github.com/chchaeun) | [이호연](https://github.com/ho991217) | [전진우](https://github.com/Jun-Jinu) |
-|:---:|:---:|:---:|:---:|
-|Mentee|[김한수](https://github.com/gillyongs)|[이가은](https://github.com/gaeunnlee) |[이기윤](https://github.com/bubbletea03) |
-| | [이정현](https://github.com/JeonghyunLee99) |[장건우](https://github.com/jangco97)|[조동준](https://github.com/resetmerlin) |
+| Mento  |    [김채은](https://github.com/chchaeun)    | [이호연](https://github.com/ho991217)  |  [전진우](https://github.com/Jun-Jinu)   |
+| :----: | :-----------------------------------------: | :------------------------------------: | :--------------------------------------: |
+| Mentee |   [김한수](https://github.com/gillyongs)    | [이가은](https://github.com/gaeunnlee) | [이기윤](https://github.com/bubbletea03) |
+|        | [이정현](https://github.com/JeonghyunLee99) | [장건우](https://github.com/jangco97)  | [조동준](https://github.com/resetmerlin) |
+
 ## 커리큘럼
+
 ### 0주차(사전학습)
 
 #### 학습 내용
 
 - Git, GitHub 기초 ([컨벤션](https://beomseok95.tistory.com/m/328)까지)
 - React 개발환경 세팅
-
-#### 미션
-
-- 리액트 프로젝트를 만들어서 화면에 “Hello World” 출력 후 스터디 깃허브에 Pull Request
-
+- [0주차 미션](./docs/0주차 미션.md)
 
 ## 1주차
 
@@ -48,8 +46,8 @@
 
 - API 활용
 - 로그인, 회원가입
-    - 브라우저 저장 공간들에 대해 공부하기
-    - 브라우저 저장 공간에 토큰 저장하기
+  - 브라우저 저장 공간들에 대해 공부하기
+  - 브라우저 저장 공간에 토큰 저장하기
 
 ### 5주차
 
