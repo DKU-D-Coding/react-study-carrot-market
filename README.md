@@ -15,7 +15,7 @@
 
 - Git, GitHub 기초 ([컨벤션](https://beomseok95.tistory.com/m/328)까지)
 - React 개발환경 세팅
-- [0주차 미션](./docs/0주차 미션.md)
+- [0주차 미션](https://github.com/DKU-D-Coding/react-study-carrot-market/blob/main/docs/0%EC%A3%BC%EC%B0%A8%20%EB%AF%B8%EC%85%98.md)
 
 ## 1주차
 
