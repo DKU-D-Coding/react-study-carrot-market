@@ -17,7 +17,7 @@
 - React 개발환경 세팅
 - [0주차 미션](https://github.com/DKU-D-Coding/react-study-carrot-market/blob/main/docs/0%EC%A3%BC%EC%B0%A8%20%EB%AF%B8%EC%85%98.md)
 
-## 1주차
+### 1주차
 
 #### 학습 내용
 
@@ -26,7 +26,7 @@
 - react-router를 활용한 페이지 연결과 Link
 - Class 컴포넌트 및 함수 컴포넌트
 
-## 2주차
+### 2주차
 
 #### 학습 내용
 
@@ -40,7 +40,7 @@
 - 브라우저 저장공간 활용 - Cookie, sessionStorage, localStorage
 - 전역상태관리
 
-## 4주차
+### 4주차
 
 #### 학습 내용
 
