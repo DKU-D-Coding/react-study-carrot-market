@@ -11,15 +11,11 @@
 
 ### ⬜️ 0주차(사전학습)
 
-#### 학습 내용
-
 - Git, GitHub 기초 ([컨벤션](https://beomseok95.tistory.com/m/328)까지)
 - React 개발환경 세팅
 - [0주차 미션](https://github.com/DKU-D-Coding/react-study-carrot-market/blob/main/docs/0%EC%A3%BC%EC%B0%A8%20%EB%AF%B8%EC%85%98.md)
 
 ### ⬜️ 1주차
-
-#### 학습 내용
 
 - 이미지 적용
 - HTML, JS와 다른 JSX 문법
@@ -27,22 +23,14 @@
 - Class 컴포넌트 및 함수 컴포넌트
 
 ### ⬜️ 2주차
-
-#### 학습 내용
-
 - props 및 훅(useState, useEffect 등)
 - 반복되는 컴포넌트 적용
 
 ### ⬜️ 3주차
-
-#### 학습 내용
-
 - 브라우저 저장공간 활용 - Cookie, sessionStorage, localStorage
 - 전역상태관리
 
 ### ⬜️ 4주차
-
-#### 학습 내용
 
 - API 활용
 - 로그인, 회원가입
@@ -50,8 +38,6 @@
   - 브라우저 저장 공간에 토큰 저장하기
 
 ### ⬜️ 5주차
-
-#### 학습 내용
 
 - 타입스크립트
 
