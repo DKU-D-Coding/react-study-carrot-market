@@ -9,13 +9,13 @@
 
 ## 커리큘럼
 
-### ⬜️ 0주차(사전학습)
+### ✅ 0주차(사전학습)
 
 - Git, GitHub 기초 ([컨벤션](https://beomseok95.tistory.com/m/328)까지)
 - React 개발환경 세팅
 - [0주차 미션](https://github.com/DKU-D-Coding/react-study-carrot-market/blob/main/docs/0%EC%A3%BC%EC%B0%A8%20%EB%AF%B8%EC%85%98.md)
 
-### ✅ 1주차
+### ⬜️ 1주차
 
 - 이미지 적용
 - HTML, JS와 다른 JSX 문법
