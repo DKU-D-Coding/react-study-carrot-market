@@ -1,7 +1,7 @@
-import Footer from '../component/home/Footer.js';
-import Header from '../component/home/Header.js';
-import ItemCard from '../component/ItemCard.js';
-import PlusButton from '../component/home/PlusButton.js';
+import Footer from './Footer.js';
+import Header from './Header.js';
+import ItemCard from './ItemCard.js';
+import PlusButton from './PlusButton.js';
 
 function Home() {
     return (
