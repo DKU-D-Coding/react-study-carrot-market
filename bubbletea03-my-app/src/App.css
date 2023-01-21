@@ -1,6 +1,25 @@
-.App {
+body {
   text-align: center;
+  padding-top: 80px;
 }
+
+.header {
+  position: fixed; /* 위에 고정 */
+  top: 0;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 3px solid gray;
+  background-color: white;
+}
+
+
+
+
 
 img {
   width: 100px;
@@ -9,6 +28,9 @@ img {
 
 .item-card {
   display: flex;
+  
+  cursor: pointer;
+  
   margin: 20px;
   border-bottom: 2px solid gray;
   padding-bottom: 10px;
@@ -23,20 +45,40 @@ img {
 }
 
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid gray;
-  margin-bottom: 20px;
-  align-items: center;
-}
 
 .header img {
   width: 50px;
   height: 50px;
+  
+  cursor: pointer;
 }
 
 .footer {
+  position: fixed; /* 아래에 고정 */
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+
   display: flex;
   justify-content: space-around;
+  
+  border-top: 3px solid gray;
+  background-color: white;
+}
+
+.footer h2 {
+  margin: 0;
+}
+
+.footer .home-button, .mycarrot-button {
+  cursor: pointer;
+}
+
+
+.plus-button {
+  position: fixed;
+  right: 10px;
+  bottom: 150px;
+
+  cursor: pointer;
 }

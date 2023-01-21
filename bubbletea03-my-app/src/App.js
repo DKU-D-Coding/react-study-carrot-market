@@ -13,6 +13,10 @@ function App() {
       <ItemCard/>
       <ItemCard/>
       <ItemCard/>
+      <ItemCard/>
+      <ItemCard/>
+      <ItemCard/>
+      <ItemCard/>
       <PlusButton/>
       <Footer/>
     </div>

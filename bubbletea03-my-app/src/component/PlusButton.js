@@ -1,7 +1,7 @@
 function PlusButton() {
     return (
         <div className="plus-button">
-            <button>(+)</button>
+            <img src="plus_icon.png"/>
         </div>
     );
 }
