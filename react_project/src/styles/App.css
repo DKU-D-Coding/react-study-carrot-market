@@ -1,0 +1,17 @@
+.App {
+    padding: 100px 0;
+}
+
+a {
+    color: black!important;
+    text-decoration: none!important;
+}
+
+button {
+    border: 0px;
+    background-color: transparent;
+}
+
+.carousel img {
+    width: 100%;
+}
