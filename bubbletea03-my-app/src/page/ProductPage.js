@@ -1,7 +1,11 @@
+import Footer from '../component/product-page/Footer';
+import Header from '../component/product-page/Header';
+
 function ProductPage() {
     return (
         <div className="product-page">
-            <h2>홈</h2>
+            <Header/>
+            <Footer/>
         </div>
     );
 }

@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 3px solid gray;
+  border-bottom: 2px solid gray;
   background-color: white;
 }
 
@@ -34,7 +34,7 @@
   display: flex;
   
   margin: 20px;
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid gray;
   padding-bottom: 10px;
 }
 
@@ -65,7 +65,7 @@
   display: flex;
   justify-content: space-around;
   
-  border-top: 3px solid gray;
+  border-top: 2px solid gray;
   background-color: white;
 }
 
