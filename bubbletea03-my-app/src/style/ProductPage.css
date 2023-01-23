@@ -46,7 +46,12 @@
 
 
 
-
+.product-page .item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 25px;
+}
 
 .product-page .item-list .item-card {
   display: flex;
@@ -54,7 +59,7 @@
 }
 
 .product-page .item-list .item-card img {
-  width: 100px;
+  width: 100%;
   height: 100px;
 }
 
