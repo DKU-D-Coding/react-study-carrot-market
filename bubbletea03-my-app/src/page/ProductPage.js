@@ -5,6 +5,7 @@ import UserContent from '../component/product-page/UserContent';
 import UserItemList from '../component/product-page/UserItemList';
 
 function ProductPage() {
+    window.scrollTo(0, 0);
     return (
         <div className="product-page">
             <Header/>

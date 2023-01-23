@@ -4,6 +4,7 @@ import PlusButton from "../component/home/PlusButton.js";
 import ItemCard from "../component/ItemCard.js";
 
 function Home() {
+    window.scrollTo(0, 0);
     return (
         <div className="home">
             <Header/>
