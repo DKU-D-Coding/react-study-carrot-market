@@ -8,14 +8,9 @@ function Home() {
     return (
         <div className="home">
             <Header/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
-            <ItemCard/>
+            {
+                [1, 2, 3, 4, 5, 6, 7, 8].map(() => <ItemCard/>)
+            }
             <PlusButton/>
             <Footer/>
         </div>

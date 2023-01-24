@@ -8,10 +8,9 @@ function UserItemList() {
                 <div style={{marginRight:"20px",color:"gray"}}>모두보기</div>
             </div>
             <div className="item-list">
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
+                {
+                [1, 2, 3, 4].map(() => <ItemCard/>)
+                }
             </div>
         </div>
     );
