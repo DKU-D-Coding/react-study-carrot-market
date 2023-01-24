@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const CardBox = styled.div`
     display: flex;
-    height: 300px;
+    height: 200px;
     align-items: center;
     border-bottom: 1px black solid;
 
@@ -20,14 +20,20 @@ const CardBox = styled.div`
     }
 
     img {
-        height: 200px;
+        height: 120px;
+        border: 1px solid black;
     }
 
     .cardDetail{
         display: flex;
         width: 100%;
+        padding-left: 15px;
         flex-direction: column;
         justify-content: space-around;
+    }
+
+    .title {
+        font-size: 20px;
     }
 
     .like {
@@ -35,17 +41,17 @@ const CardBox = styled.div`
         font-size: 25px;
     }
 `
-function Card(props) {
+function Card({ goodsId, imgSrc, title, price, like }) {
     return (
             <CardBox>
-                <Link to={'/product/' + props.goodsId}>
-                    <img src={props.img}/>
+                <Link to={'/product/' + goodsId}>
+                    <img src={imgSrc}/>
                     <div className="cardDetail">
                         <div>
-                            <h2>{props.title}</h2>
-                            <p>{props.price}원</p>
+                            <b className="title">{title}</b>
+                            <p>{price}원</p>
                         </div>
-                        <p className="like"><FontAwesomeIcon icon={faHeart}/> {props.like}</p>
+                        <p className="like"><FontAwesomeIcon icon={faHeart}/> {like}</p>
                     </div>
                 </Link>
             </CardBox>

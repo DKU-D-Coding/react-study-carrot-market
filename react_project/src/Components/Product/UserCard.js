@@ -9,13 +9,13 @@ const Card = styled.div`
     }
 `
 
-function UserCard(props){
+function UserCard({ goodsId, imgSrc, title, price }){
     return(
-        <Link to={'/product/' + props.goodsId}>
+        <Link to={'/product/' + goodsId}>
             <Card className="card">
-                <img src={props.img}/>
-                <p>{props.title}</p>
-                <p>{props.price}</p>
+                <img src={imgSrc}/>
+                <p>{title}</p>
+                <p>{price}</p>
             </Card>
         </Link>
     )

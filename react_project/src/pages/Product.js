@@ -6,6 +6,7 @@ import ProductTopBar from '../Components/Product/ProductTopBar';
 import ProductBottomBar from '../Components/Product/ProductBottomBar';
 import styled from 'styled-components';
 import UserGoods from '../Components/Product/UserGoods';
+const baseUrl = process.env.PUBLIC_URL;
 
 const ProductDetail = styled.div`
   padding: 20px;
@@ -21,20 +22,23 @@ const ProductDetail = styled.div`
      font-size: 45px;
   }
 `
+
+let carouselItems = [
+  `${baseUrl}/no_img.jpg`,
+  `${baseUrl}/no_img.jpg`,
+  `${baseUrl}/no_img.jpg`,
+]
+
 function Product() {
     return(
         <>
           <ProductTopBar/>
             <Carousel>
-              <CarouselItem>
-                <img src={process.env.PUBLIC_URL + '/no_img.jpg'}/>
-              </CarouselItem>
-              <CarouselItem>
-                <img src={process.env.PUBLIC_URL + '/no_img.jpg'}/>
-              </CarouselItem>
-              <CarouselItem>
-                <img src={process.env.PUBLIC_URL + '/no_img.jpg'}/>
-              </CarouselItem>
+              {carouselItems.map( item => 
+                <CarouselItem>
+                  <img src={item}/>
+                </CarouselItem>  
+              )}
             </Carousel>
             <ProductDetail>
               <div className="user">

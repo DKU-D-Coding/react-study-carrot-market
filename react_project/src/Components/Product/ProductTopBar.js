@@ -20,7 +20,7 @@ const Bar = styled.div`
 `
 
 function ProductTopBar(){
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     return(
         <Bar>

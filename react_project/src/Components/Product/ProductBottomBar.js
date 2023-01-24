@@ -20,6 +20,8 @@ const Bar = styled.div`
 
     .price {
         font-size: 20px;
+        border-left: 2px solid black;
+        padding-left: 30px;
     }
 `
 
@@ -27,7 +29,6 @@ function ProductBottomBar(){
     return(
         <Bar>
             <FontAwesomeIcon icon={faHeart}/>
-            |
             <span className="price">가격</span>
         </Bar>
     )
