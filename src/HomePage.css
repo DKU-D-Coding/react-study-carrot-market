@@ -1,0 +1,64 @@
+.mainNav {
+  position: sticky;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e6f1;
+  background-color: aliceblue;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.barIcon {
+  margin-top: 10px;
+  font-size: 25px;
+  padding-right: 100px;
+}
+.mainHeaderP {
+  font-size: 30px;
+  margin: 0;
+  padding-left: 100px;
+  font-weight: 600;
+}
+.mainFoot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: aliceblue;
+  bottom: 0px;
+}
+.mainFootContainer1 {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-right: 100px;
+}
+.mainFootContainer2 {
+  width: 80px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+.mainFootContainer1:hover,
+.mainFootContainer2:hover {
+  background-color: bisque;
+  border-radius: 40%;
+}
+.plusIcon {
+  position: fixed;
+  font-size: 60px;
+  bottom: 100px;
+  right: 50px;
+}
