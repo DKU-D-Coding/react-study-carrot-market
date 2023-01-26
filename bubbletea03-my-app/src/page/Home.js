@@ -3,13 +3,16 @@ import Footer from "../component/home/Footer.js";
 import PlusButton from "../component/home/PlusButton.js";
 import ItemCard from "../component/ItemCard.js";
 
+import data from "../data/data.js";
+
 function Home() {
     window.scrollTo(0, 0);
+    
     return (
         <div className="home">
             <Header/>
             {
-                [1, 2, 3, 4, 5, 6, 7, 8].map(() => <ItemCard/>)
+                data.map((value, index) => <ItemCard item={value}/>)
             }
             <PlusButton/>
             <Footer/>
