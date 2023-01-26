@@ -1,8 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './Components/ScrollToTop';
+import Home from './pages/Home';
+import Product from './pages/Product';
+
 function App() {
   return (
-    <div className="App">
-      <p>Hello World</p>
-    </div>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/product/:goodsId" element={<Product/>} />
+      </Routes>       
+    </Router>
   );
 }
 
