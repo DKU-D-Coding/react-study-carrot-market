@@ -1,9 +1,10 @@
 import './style/Home.css'
-import './style/ProductPage.css'
 
+import './GlobalStyle.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './page/Home';
 import ProductPage from './page/ProductPage';
+
 
 function App() {
   return (

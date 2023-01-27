@@ -3,8 +3,18 @@ import Footer from '../component/product-page/Footer';
 import Header from '../component/product-page/Header';
 import UserContent from '../component/product-page/UserContent';
 import UserItemList from '../component/product-page/UserItemList';
-
+import styled from 'styled-components';
 import itemData from '../data/ItemData';
+
+const StyledBlock = styled.div`
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    .top-image img {
+        width: 100%;
+    }
+`
+
 
 export default function ProductPage() {
     const params = useParams();
@@ -12,7 +22,7 @@ export default function ProductPage() {
 
     window.scrollTo(0, 0);
     return (
-        <div className="product-page">
+        <StyledBlock>
             <Header/>
             <Footer/>
             <div className="top-image">
@@ -20,6 +30,6 @@ export default function ProductPage() {
             </div>
             <UserContent item={item}/>
             <UserItemList userName={item.sellerName}/>
-        </div>
+        </StyledBlock>
     );
 }

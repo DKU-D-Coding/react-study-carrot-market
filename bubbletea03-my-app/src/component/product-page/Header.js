@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledHeader = styled.header`
+const StyledBlock = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
@@ -9,12 +9,12 @@ const StyledHeader = styled.header`
 
     border-bottom: 2px solid gray;
     background-color: white;
-`
 
-const StyledImg = styled.img`
-    width: 50px;
-    height: 50px;
-    padding: 15px;
+    img {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+    }
 `
 
 function Header() {
@@ -22,12 +22,14 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <StyledHeader>
-            <StyledImg src="/product-page/arrow.png" onClick={() => {navigate(-1)}} style={{cursor:"pointer"}}/>
+        <StyledBlock>
+            <button onClick={() => {navigate(-1)}}>
+                <img src="/product-page/arrow.png"/>
+            </button>
             <Link to="/">
-                <StyledImg src="/home/home.png"/>
+                <img src="/home/home.png"/>
             </Link>
-        </StyledHeader>
+        </StyledBlock>
     );
 }
 
