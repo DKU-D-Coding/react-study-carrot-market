@@ -9,7 +9,7 @@ const mysql = require("mysql2"); // mysql 모듈 사용
 var connection = mysql.createConnection({
     host : "localhost",
     user : "root", //mysql의 id
-    password : "h032703s", //mysql의 password
+    password : ", //mysql의 password
     database : "carrot", //사용할 데이터베이스
 });
 
