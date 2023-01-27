@@ -2,3 +2,8 @@ button {
     all: unset;
     cursor: pointer;
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
