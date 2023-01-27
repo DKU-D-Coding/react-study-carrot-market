@@ -17,19 +17,18 @@ const Bar = styled.div`
     font-size: 30px;
     gap: 30px;
     z-index: 999;
-
-    .price {
-        font-size: 20px;
-        border-left: 2px solid black;
-        padding-left: 30px;
-    }
+`
+const Price = styled.span`
+    font-size: 20px;
+    border-left: 2px solid black;
+    padding-left: 30px;
 `
 
 function ProductBottomBar(){
     return(
         <Bar>
             <FontAwesomeIcon icon={faHeart}/>
-            <span className="price">가격</span>
+            <Price className="price">가격</Price>
         </Bar>
     )
 }

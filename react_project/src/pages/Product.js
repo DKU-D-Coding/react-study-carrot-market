@@ -6,27 +6,24 @@ import ProductTopBar from '../Components/Product/ProductTopBar';
 import ProductBottomBar from '../Components/Product/ProductBottomBar';
 import styled from 'styled-components';
 import UserGoods from '../Components/Product/UserGoods';
-const baseUrl = process.env.PUBLIC_URL;
-
+import EmptyImg from '../assets/image/no_img.jpg';
 const ProductDetail = styled.div`
   padding: 20px;
   font-size: 20px;
-  
-  .user {
-    display: flex;
-    gap: 20px;
-    line-height: 45px;
-    font-size: 25px;
-  }
-  .user svg {
+`
+const UserContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  line-height: 45px;
+  font-size: 25px;
+  svg {
      font-size: 45px;
   }
 `
-
-let carouselItems = [
-  `${baseUrl}/no_img.jpg`,
-  `${baseUrl}/no_img.jpg`,
-  `${baseUrl}/no_img.jpg`,
+const carouselItems = [
+  EmptyImg,
+  EmptyImg,
+  EmptyImg
 ]
 
 function Product() {
@@ -41,10 +38,10 @@ function Product() {
               )}
             </Carousel>
             <ProductDetail>
-              <div className="user">
+              <UserContainer>
                 <FontAwesomeIcon icon={faUserCircle} />
                 <span>닉네임</span>
-              </div>
+              </UserContainer>
               <hr/>
               <div>
                 <b>제목</b>
