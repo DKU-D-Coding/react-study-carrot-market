@@ -10,3 +10,6 @@
 ### 1주차
 - [CSS의 fixed position으로 메뉴바 상단 고정](https://www.daleseo.com/css-position-fixed-navigation/)
 - [이가은님 레포지토리](https://github.com/gaeunnlee/react-study-carrot-market/tree/gaeunnlee_week_1/react_project/src)
+
+### 2주차
+- [리액트 라우터(React Router) - URL Parameters, Query Parameters (+URLSearchParams)](https://velog.io/@wiostz98kr/TIL51-l-React-Router-3%ED%83%84)

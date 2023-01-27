@@ -3,7 +3,7 @@ import Footer from "../component/home/Footer.js";
 import PlusButton from "../component/home/PlusButton.js";
 import ItemCard from "../component/ItemCard.js";
 
-import data from "../data/data.js";
+import itemData from "../data/ItemData.js";
 
 function Home() {
     window.scrollTo(0, 0);
@@ -12,7 +12,7 @@ function Home() {
         <div className="home">
             <Header/>
             {
-                data.map((value, index) => <ItemCard item={value}/>)
+                itemData.map((item, idx) => <ItemCard item={item} key={idx}/>)
             }
             <PlusButton/>
             <Footer/>
