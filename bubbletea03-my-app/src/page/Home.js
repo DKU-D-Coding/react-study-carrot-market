@@ -15,7 +15,7 @@ export default function Home() {
             }
             <BottomNav/>
             <PlusButton>
-                <img src="/home/plus.png"/>
+                <img alt="플러스 버튼" src="/home/plus.png"/>
             </PlusButton>
         </StyledBlock>
     );
