@@ -6,16 +6,6 @@ import UserItemList from '../component/product-page/UserItemList';
 import styled from 'styled-components';
 import itemData from '../data/ItemData';
 
-const StyledBlock = styled.div`
-    padding-top: 80px;
-    padding-bottom: 100px;
-
-    .top-image img {
-        width: 100%;
-    }
-`
-
-
 export default function ProductPage() {
     const params = useParams();
     const [ item ] = itemData.filter(item => item.id == params.itemId);
@@ -33,3 +23,12 @@ export default function ProductPage() {
         </StyledBlock>
     );
 }
+
+const StyledBlock = styled.div`
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    .top-image img {
+        width: 100%;
+    }
+`

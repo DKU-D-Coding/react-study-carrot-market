@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export default function Header() {
+    return (
+        <StyledBlock>
+            <h2>홈</h2>
+            <button>
+                <img alt="메뉴 버튼" src="/home/hamburger.png"/>
+            </button>
+        </StyledBlock>
+    );
+}
+
 const StyledBlock = styled.div`
     position: fixed; /* 위에 고정 */
     top: 0;
@@ -27,16 +38,3 @@ const StyledBlock = styled.div`
         }
     }
 `
-
-function Header() {
-    return (
-        <StyledBlock>
-            <h2>홈</h2>
-            <button>
-                <img src="/home/hamburger.png"/>
-            </button>
-        </StyledBlock>
-    );
-}
-
-export default Header;

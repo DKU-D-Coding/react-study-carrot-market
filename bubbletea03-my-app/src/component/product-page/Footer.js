@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export default function Footer() {
+    return (
+        <StyledBlock>
+            <img alt="빈 하트" src="/product-page/heart.png"/>
+            <div className="mycarrot-button">
+                <h3>가격</h3>
+            </div>
+        </StyledBlock>
+    );
+}
+
 const StyledBlock = styled.div`
     position: fixed;
     bottom: 0;
@@ -23,14 +34,3 @@ const StyledBlock = styled.div`
         border-right: 2px solid gray;
     }
 `
-
-export default function Footer() {
-    return (
-        <StyledBlock>
-            <img src="/product-page/heart.png"/>
-            <div className="mycarrot-button">
-                <h3>가격</h3>
-            </div>
-        </StyledBlock>
-    );
-}

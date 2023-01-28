@@ -1,6 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+export default function Header() {
+
+    const navigate = useNavigate();
+
+    return (
+        <StyledBlock>
+            <button onClick={() => {navigate(-1)}}>
+                <img alt="왼쪽 화살표" src="/product-page/arrow.png"/>
+            </button>
+            <Link to="/">
+                <img alt="홈 아이콘" src="/home/home.png"/>
+            </Link>
+        </StyledBlock>
+    );
+}
+
 const StyledBlock = styled.div`
     position: fixed;
     top: 0;
@@ -16,21 +32,3 @@ const StyledBlock = styled.div`
         padding: 15px;
     }
 `
-
-function Header() {
-
-    const navigate = useNavigate();
-
-    return (
-        <StyledBlock>
-            <button onClick={() => {navigate(-1)}}>
-                <img src="/product-page/arrow.png"/>
-            </button>
-            <Link to="/">
-                <img src="/home/home.png"/>
-            </Link>
-        </StyledBlock>
-    );
-}
-
-export default Header;

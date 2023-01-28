@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export default function Footer() {
+    return (
+        <StyledBlock>
+            <button>
+                <img alt="홈 아이콘" src="/home/home.png"/>
+                <h2>홈</h2>
+            </button>
+            <button>
+                <img alt="사람 아이콘" src="/home/person.png"/>
+                <h2>나의 당근</h2>
+            </button>
+        </StyledBlock>
+    );
+}
 
 const StyledBlock = styled.div`
     position: fixed; /* 아래에 고정 */
@@ -20,21 +34,3 @@ const StyledBlock = styled.div`
 
     h2 { margin: 0; }
 `
-
-
-function Footer() {
-    return (
-        <StyledBlock>
-            <button>
-                <img src="/home/home.png"/>
-                <h2>홈</h2>
-            </button>
-            <button>
-                <img src="/home/person.png"/>
-                <h2>나의 당근</h2>
-            </button>
-        </StyledBlock>
-    );
-}
-
-export default Footer;
