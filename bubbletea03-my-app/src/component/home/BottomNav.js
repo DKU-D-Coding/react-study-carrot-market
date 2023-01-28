@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Footer() {
+export default function BottomNav() {
     return (
         <StyledBlock>
             <button>

@@ -20,6 +20,17 @@ const itemData = [
         postTime: "2022/01/24",
         content: "키보드를 팔고있습니다 ~~!", 
         likeCount: 0,
+    },
+    {
+        id: 3,
+        title: "키보드팝니다@@@@@@@22",
+        price: 300002,
+        itemName: "키보드", 
+        sellerName: "키보드파는사람22", 
+        category: "디지털기기", 
+        postTime: "2022/01/24",
+        content: "키보드를 팔고있습니다 ~~!", 
+        likeCount: 0,
     }
 
 ];

@@ -1,20 +1,19 @@
-import Header from "../component/home/Header.js";
-import Footer from "../component/home/Footer.js";
 import ItemCard from "../component/ItemCard.js";
-
 import itemData from "../data/ItemData.js";
 import styled from "styled-components";
+import TopNav from './../component/home/TopNav';
+import BottomNav from './../component/home/BottomNav';
 
 export default function Home() {
     window.scrollTo(0, 0);
     
     return (
         <StyledBlock>
-            <Header/>
+            <TopNav/>
             {
                 itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
             }
-            <Footer/>
+            <BottomNav/>
             <PlusButton>
                 <img src="/home/plus.png"/>
             </PlusButton>

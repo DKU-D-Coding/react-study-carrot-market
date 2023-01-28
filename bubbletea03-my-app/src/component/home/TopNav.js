@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Header() {
+export default function TopNav() {
     return (
         <StyledBlock>
             <h2>홈</h2>

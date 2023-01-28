@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Header() {
+export default function TopNav() {
 
     const navigate = useNavigate();
 
