@@ -1,6 +1,15 @@
+body {
+    margin: 0;
+}
+
 button {
     all: unset;
     cursor: pointer;
+}
+
+input, textarea {
+    all: unset;
+    box-sizing: border-box;
 }
 
 a {
