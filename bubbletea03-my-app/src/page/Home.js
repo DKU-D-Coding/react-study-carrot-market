@@ -3,6 +3,7 @@ import itemData from "../data/ItemData.js";
 import styled from "styled-components";
 import TopNav from './../component/home/TopNav';
 import BottomNav from './../component/home/BottomNav';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     window.scrollTo(0, 0);
@@ -14,9 +15,11 @@ export default function Home() {
                 itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
             }
             <BottomNav/>
-            <PlusButton>
-                <img alt="플러스 버튼" src="/home/plus.png"/>
-            </PlusButton>
+            <Link to="/writing">
+                <PlusButton>
+                    <img alt="플러스 버튼" src="/home/plus.png"/>
+                </PlusButton>
+            </Link>
         </StyledBlock>
     );
 }
