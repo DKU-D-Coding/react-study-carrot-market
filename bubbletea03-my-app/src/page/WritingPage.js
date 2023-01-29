@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CategoryModal from '../component/writing-page/CategoryModal';
 import Header from '../component/writing-page/Header';
 
 
@@ -8,6 +9,7 @@ export default function WritingPage() {
     return ( // TODO: html 전부 완성되면, 컴포넌트화 시키기
         <StyledBlock>
             <Header/>
+            <CategoryModal/>
             <div className='photo-upload'>
                 <div>ㅇㅇ</div>
                 <div>ㅇㅇ</div>
