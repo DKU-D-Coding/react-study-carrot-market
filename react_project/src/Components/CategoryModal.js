@@ -16,7 +16,8 @@ const Background = styled.div `
 `
 const Modal = styled.ul`
     width: 300px;
-    min-height: 300px;
+    max-height: 80vh;
+    overflow-y: scroll;
     background-color: white;
     list-style: none;
     box-sizing: border-box;
@@ -29,6 +30,9 @@ const Modal = styled.ul`
 `
 const List = styled.li`
     margin-bottom: 20px;
+    &:hover {
+        cursor: pointer;
+    }
 `
 function CategoryModal(props){
     const [clickedCate, setClickedCate] = useState()

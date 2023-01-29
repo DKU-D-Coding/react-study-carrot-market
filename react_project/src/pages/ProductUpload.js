@@ -1,5 +1,4 @@
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -64,7 +63,7 @@ const ImgBox = styled.div`
     height: 80px;
 `
 const ImgUploadBtn = styled(ImgItem)`
-    &:hover {
+    &:hover, label:hover {
         cursor: pointer;
     }
     span {
