@@ -1,7 +1,7 @@
-import AddBtn from "../Components/Home/AddBtn";
+import UploadBtn from "../Components/Home/UploadBtn";
 import BottomBar from "../Components/Home/BottomBar";
 import Card from "../Components/Home/Card";
-import TopBar from "../Components/Home/TopBar";
+import TopBar from "../Components/Bar/TopBar";
 import EmptyImg from '../assets/image/no_img.jpg';
 
 let cards = [
@@ -45,8 +45,11 @@ let cards = [
 function Home(){
     return(
         <>  
-            <TopBar />
-            <AddBtn />
+            <TopBar
+                title="홈"
+                menuBtn={true}
+            />
+            <UploadBtn />
                 { cards.map(props =>
                         <Card 
                             key = {props.goodsId}

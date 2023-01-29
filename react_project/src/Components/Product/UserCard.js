@@ -7,6 +7,7 @@ const Card = styled.div`
     }
     p {
         padding-left: 20px;
+        margin: 0;
     }
     ul {
         margin: 0;
