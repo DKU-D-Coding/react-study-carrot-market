@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Header from '../component/writing-page/Header';
 
 
 
@@ -6,16 +7,10 @@ import styled from 'styled-components';
 export default function WritingPage() {
     return ( // TODO: html 전부 완성되면, 컴포넌트화 시키기
         <StyledBlock>
-            <div className='header'>
-                <button>
-                    <img alt="왼쪽 화살표" src="/product-page/arrow.png"/>
-                </button>
-                <h2>중고거래 글쓰기</h2>
-                <button>
-                    <h2>완료</h2>
-                </button>
-            </div>
+            <Header/>
             <div className='photo-upload'>
+                <div>ㅇㅇ</div>
+                <div>ㅇㅇ</div>
                 <div>ㅇㅇ</div>
             </div>
             <div className='title'>
@@ -36,26 +31,11 @@ export default function WritingPage() {
 }
 
 const StyledBlock = styled.div`
-    .header {
+    .photo-upload {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid gray;
-
-        button:first-child {
-            width: 50px;
-            height: 50px;
-            padding-left: 10px;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        button:last-child {
-            color: orange;
-            padding-right: 10px;
+        border-bottom: 1px solid gray;
+        * {
+            padding: 25px;
         }
     }
 
