@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 
-export default function CategoryModal() {
+export default function CategoryModal({ close, select }) {
     return (
         <StyledBlock>
+            <Background onClick={close}/>
             <section>
                 <div className='categories'>
                     {
-                        CATEGORY_LIST.map((category, idx) => <button key={idx}>{category}</button>)
+                        CATEGORY_LIST.map((category, idx) => 
+                            <button onClick={() => {select(category); close();}} key={idx}>
+                                {category}
+                            </button>
+                            )
                     }
                 </div>
             </section>
@@ -15,10 +20,13 @@ export default function CategoryModal() {
     );
 }
 
+const Background = styled.div`
+    width: 100%;
+    height: 100%;
+`
+
 const StyledBlock = styled.div`
-    display: flex;
-    align-items: center;
-    position: fixed;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     right: 0;
@@ -26,9 +34,12 @@ const StyledBlock = styled.div`
     bottom: 0;
 
     section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 80%;
         height: 90%;
-        margin: 0 auto;
         background-color: white;
 
         .categories {

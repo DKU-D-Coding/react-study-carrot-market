@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import CategoryModal from '../component/writing-page/CategoryModal';
 import Header from '../component/writing-page/Header';
@@ -6,10 +7,16 @@ import Header from '../component/writing-page/Header';
 
 
 export default function WritingPage() {
+    const [categoryModalState, setCategoryModalState] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState("");
+
     return ( // TODO: html 전부 완성되면, 컴포넌트화 시키기
         <StyledBlock>
             <Header/>
-            <CategoryModal/>
+            { 
+                categoryModalState
+                && <CategoryModal close={() => {setCategoryModalState(false)}} select={setSelectedCategory}/>
+            }
             <div className='photo-upload'>
                 <div>ㅇㅇ</div>
                 <div>ㅇㅇ</div>
@@ -19,8 +26,10 @@ export default function WritingPage() {
                 <input type="text" placeholder="제목"/>
             </div>
             <div className='category'>
-                <h3>카테고리</h3>
-                <button><h3>▼</h3></button>
+                <h3>{selectedCategory || "카테고리"}</h3>
+                <button onClick={() => {setCategoryModalState(true)}}>
+                    <h3>▼</h3>
+                </button>
             </div>
             <div className='price'>
                 <input type="text" placeholder="가격(원)"/>

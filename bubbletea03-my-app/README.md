@@ -20,3 +20,4 @@
 - [conditional rendering in styled components](https://stackoverflow.com/questions/48502647/conditional-rendering-in-styled-components)
   :: styled-components에서 조건부 렌더링(?) 하는 하는법
 - [[react] 모달 팝업창 만들기 (react modal)](http://localhost:3000/writing)
+- [이가은님 PR](https://github.dev/DKU-D-Coding/react-study-carrot-market/pull/11)
