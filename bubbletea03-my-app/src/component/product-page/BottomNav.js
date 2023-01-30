@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function BottomNav() {
     return (
         <StyledBlock>
-            <img alt="빈 하트" src="/product-page/heart.png"/>
+            <img alt="빈 하트" src="/icon/heart.png"/>
             <div className="mycarrot-button">
                 <h3>가격</h3>
             </div>

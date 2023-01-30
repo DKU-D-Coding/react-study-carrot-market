@@ -21,3 +21,5 @@
   :: styled-components에서 조건부 렌더링(?) 하는 하는법
 - [[react] 모달 팝업창 만들기 (react modal)](http://localhost:3000/writing)
 - [이가은님 PR](https://github.dev/DKU-D-Coding/react-study-carrot-market/pull/11)
+
++ [[HTML5] 파일(File) API에 대해 알아보자](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=horajjan&logNo=220463053828)

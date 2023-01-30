@@ -17,7 +17,7 @@ export default function Home() {
             <BottomNav/>
             <Link to="/writing">
                 <PlusButton>
-                    <img alt="플러스 버튼" src="/home/plus.png"/>
+                    <img alt="플러스 버튼" src="/icon/plus.png"/>
                 </PlusButton>
             </Link>
         </StyledBlock>

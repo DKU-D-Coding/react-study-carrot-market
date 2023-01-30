@@ -8,10 +8,10 @@ export default function TopNav() {
     return (
         <StyledBlock>
             <button onClick={() => {navigate(-1)}}>
-                <img alt="왼쪽 화살표" src="/product-page/arrow.png"/>
+                <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
             </button>
             <Link to="/">
-                <img alt="홈 아이콘" src="/home/home.png"/>
+                <img alt="홈 아이콘" src="/icon/home.png"/>
             </Link>
         </StyledBlock>
     );

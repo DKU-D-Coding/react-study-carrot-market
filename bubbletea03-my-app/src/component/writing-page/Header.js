@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <StyledBlock>
             <button onClick={() => {navigate(-1)}}>
-                <img alt="왼쪽 화살표" src="/product-page/arrow.png"/>
+                <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
             </button>
             <h2>중고거래 글쓰기</h2>
             <button>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import CategoryModal from '../component/writing-page/CategoryModal';
 import Header from '../component/writing-page/Header';
+import PhotoUpload from '../component/writing-page/PhotoUpload';
 
 
 
@@ -17,11 +18,7 @@ export default function WritingPage() {
                 categoryModalState
                 && <CategoryModal close={() => {setCategoryModalState(false)}} select={setSelectedCategory}/>
             }
-            <div className='photo-upload'>
-                <div>ㅇㅇ</div>
-                <div>ㅇㅇ</div>
-                <div>ㅇㅇ</div>
-            </div>
+            <PhotoUpload/>
             <div className='title'>
                 <input type="text" placeholder="제목"/>
             </div>
@@ -42,14 +39,6 @@ export default function WritingPage() {
 }
 
 const StyledBlock = styled.div`
-    .photo-upload {
-        display: flex;
-        border-bottom: 1px solid gray;
-        * {
-            padding: 25px;
-        }
-    }
-
     .title, .price {
         height: 70px;
         border-bottom: 1px solid gray;

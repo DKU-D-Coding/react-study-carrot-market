@@ -4,11 +4,11 @@ export default function BottomNav() {
     return (
         <StyledBlock>
             <button>
-                <img alt="홈 아이콘" src="/home/home.png"/>
+                <img alt="홈 아이콘" src="/icon/home.png"/>
                 <h2>홈</h2>
             </button>
             <button>
-                <img alt="사람 아이콘" src="/home/person.png"/>
+                <img alt="사람 아이콘" src="/icon/person.png"/>
                 <h2>나의 당근</h2>
             </button>
         </StyledBlock>

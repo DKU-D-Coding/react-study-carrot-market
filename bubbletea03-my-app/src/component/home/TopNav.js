@@ -5,7 +5,7 @@ export default function TopNav() {
         <StyledBlock>
             <h2>홈</h2>
             <button>
-                <img alt="메뉴 버튼" src="/home/hamburger.png"/>
+                <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
             </button>
         </StyledBlock>
     );
