@@ -5,50 +5,54 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faHouse, faLeftLong, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './ProductItemDetail.css';
 import UserProduct from './UserProduct';
+//이미지가 여러장일 경우의 코드를 추가
+//판매상품 카드를 눌렀을 때 이동 할 수 있도록 Link 구현
+//뒤로가기 버튼, 홈버튼 link 구현
+//모두보기 구현
+//하트 기능 구현
+//user 이미지는 유저 데이터에 저정했다가 뿌려주는 것으로 구현
 
 function ProductItemDetail() {
   const { itemSlug } = useParams();
   const item = getItemBySlug(itemSlug);
   return (
-    <>
-      <div className='productPageContainer'>
-        <div className='productNav'>
-          <FontAwesomeIcon icon={faLeftLong} className='backIcon' />
-          <FontAwesomeIcon icon={faHouse} className='homeIcon' />
-        </div>
+    <div className='productPageContainer'>
+      <div className='productNav'>
+        <FontAwesomeIcon icon={faLeftLong} className='backIcon' />
+        <FontAwesomeIcon icon={faHouse} className='homeIcon' />
+      </div>
 
-        <div className='imageLayer'>
-          <div className='imageContainer'>
-            <img src={item.imageUrl} alt={item.title} className='productImage'></img>
-          </div>
-        </div>
-
-        <div className='userLayer'>
-          <div className='userContainer'>
-            <FontAwesomeIcon icon={faCircleUser} className='userIcon' />
-            <p className='ptag'>{item.nickName}</p>
-          </div>
-          <div>
-            <p className='ptag'>{item.title}</p>
-            <p className='ptag'>{item.content}</p>
-          </div>
-        </div>
-        <div className='sellingLayer'>
-          <div className='sellingContainer'>
-            <p className='ptag'>{item.nickName}님의 판매 상품</p>
-            <p>모두 보기</p>
-          </div>
-
-          <div>
-            <UserProduct nickName={item.nickName}></UserProduct>
-          </div>
-        </div>
-        <div className='footLayer'>
-          <FontAwesomeIcon icon={faHeart} className='heartIcon' />
-          <p className='ptag'>{item.price}</p>
+      <div className='imageLayer'>
+        <div className='imageContainer'>
+          <img src={item.imageUrl} alt={item.title} className='productImage'></img>
         </div>
       </div>
-    </>
+
+      <div className='userLayer'>
+        <div className='userContainer'>
+          <FontAwesomeIcon icon={faCircleUser} className='userIcon' />
+          <p className='ptag'>{item.nickName}</p>
+        </div>
+        <div>
+          <p className='ptag'>{item.title}</p>
+          <p className='ptag'>{item.content}</p>
+        </div>
+      </div>
+      <div className='sellingLayer'>
+        <div className='sellingContainer'>
+          <p className='ptag'>{item.nickName}님의 판매 상품</p>
+          <p>모두 보기</p>
+        </div>
+
+        <div>
+          <UserProduct nickName={item.nickName}></UserProduct>
+        </div>
+      </div>
+      <div className='footLayer'>
+        <FontAwesomeIcon icon={faHeart} className='heartIcon' />
+        <p className='ptag'>{item.price}</p>
+      </div>
+    </div>
   );
 }
 

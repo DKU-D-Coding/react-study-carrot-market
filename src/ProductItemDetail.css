@@ -47,12 +47,17 @@
 .ptag {
   font-size: 1.5rem;
 }
-.sellingLayer {
-}
+
 .sellingContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.userproductContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
 }
 .footLayer {
   box-sizing: border-box;

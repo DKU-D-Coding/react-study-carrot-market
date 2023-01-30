@@ -4,6 +4,7 @@ import './HomePage.css';
 import items from './mock.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   const [itemObject, setItemObject] = useState(items);
@@ -19,16 +20,18 @@ function HomePage() {
       </header>
       <ProductPage itemObject={itemObject} onClick={handleUpdateClick}></ProductPage>
       <div className='mainFoot'>
-        <div className='mainFootContainer1'>
+        <button className='mainFootContainer1'>
           <FontAwesomeIcon icon={faHouse} />
           <p>홈</p>
-        </div>
-        <div className='mainFootContainer2'>
+        </button>
+        <button className='mainFootContainer2'>
           <FontAwesomeIcon icon={faUser} />
           <p>나의 당근</p>
-        </div>
+        </button>
       </div>
-      <FontAwesomeIcon icon={faCirclePlus} className='plusIcon' />
+      <Link to='/post'>
+        <FontAwesomeIcon icon={faCirclePlus} className='plusIcon' />
+      </Link>
     </div>
   );
 }

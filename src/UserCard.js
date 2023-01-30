@@ -1,23 +1,9 @@
 import React from 'react';
 import './ProductPage.css';
 import { Link } from 'react-router-dom';
-function ProductPage({ itemObject }) {
+function UserCard({ item, key }) {
   return (
-    <div className='itemObjectContainer'>
-      {itemObject.map(element => {
-        return (
-          <div key={element.id} className='itemObject'>
-            <ProductItem item={element}></ProductItem>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-function ProductItem({ item }) {
-  return (
-    <div className='itemContainer'>
+    <div key={key} className='itemContainer'>
       <img src={item.imageUrl} className='itemImage' alt={item.title}></img>
       <div className='itemDetail'>
         <Link to={`/${item.slug}`}>
@@ -33,4 +19,4 @@ function ProductItem({ item }) {
   );
 }
 
-export default ProductPage;
+export default UserCard;
