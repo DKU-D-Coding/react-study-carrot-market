@@ -21,15 +21,15 @@ export default function PhotoUpload() {
     return (
         <StyledBlock>
             <Label>
-                <Img src='/icon/camera.png'/>
+                <Img alt="카메라" src='/icon/camera.png'/>
                 <input type="file" accept="image/*" onChange={uploadImages} multiple/>
             </Label>
             {
                 imgUrlArr.map((url, idx) =>
                     <div key={idx}>
-                        <Img src={url}/>
+                        <Img alt="업로드한 이미지" src={url}/>
                         <DeleteBtn onClick={() => { deleteImg(idx) }}>
-                            <img src="/icon/close.png"/>
+                            <img alt="닫기 버튼" src="/icon/close.png"/>
                         </DeleteBtn>
                     </div>
                     )
@@ -61,7 +61,7 @@ const Label = styled.label`
     input {
         display: none;
     }
-    `
+`
 
 const Img = styled.img`
     width: 70px;
