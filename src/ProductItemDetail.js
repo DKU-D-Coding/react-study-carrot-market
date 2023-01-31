@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faHouse, faLeftLong, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './ProductItemDetail.css';
 import UserProduct from './UserProduct';
+import { useState } from 'react';
+import { useEffect } from 'react';
 //이미지가 여러장일 경우의 코드를 추가
 //판매상품 카드를 눌렀을 때 이동 할 수 있도록 Link 구현
 //뒤로가기 버튼, 홈버튼 link 구현
@@ -14,7 +16,15 @@ import UserProduct from './UserProduct';
 
 function ProductItemDetail() {
   const { itemSlug } = useParams();
-  const item = getItemBySlug(itemSlug);
+  const [itemObject, setItemObject] = useState({});
+  const getListFromApi = async itemSlug => {
+    const item = await getItemBySlug(itemSlug);
+    setItemObject(item);
+  };
+  console.log(itemObject);
+  useEffect(() => {
+    getListFromApi(itemSlug);
+  }, [itemSlug]);
   return (
     <div className='productPageContainer'>
       <div className='productNav'>
@@ -24,33 +34,33 @@ function ProductItemDetail() {
 
       <div className='imageLayer'>
         <div className='imageContainer'>
-          <img src={item.imageUrl} alt={item.title} className='productImage'></img>
+          <img src={itemObject.imageUrl} alt={itemObject.title} className='productImage'></img>
         </div>
       </div>
 
       <div className='userLayer'>
         <div className='userContainer'>
           <FontAwesomeIcon icon={faCircleUser} className='userIcon' />
-          <p className='ptag'>{item.nickName}</p>
+          <p className='ptag'>{itemObject.nickName}</p>
         </div>
         <div>
-          <p className='ptag'>{item.title}</p>
-          <p className='ptag'>{item.content}</p>
+          <p className='ptag'>{itemObject.title}</p>
+          <p className='ptag'>{itemObject.content}</p>
         </div>
       </div>
       <div className='sellingLayer'>
         <div className='sellingContainer'>
-          <p className='ptag'>{item.nickName}님의 판매 상품</p>
+          <p className='ptag'>{itemObject.nickName}님의 판매 상품</p>
           <p>모두 보기</p>
         </div>
 
         <div>
-          <UserProduct nickName={item.nickName}></UserProduct>
+          <UserProduct nickName={itemObject.nickName}></UserProduct>
         </div>
       </div>
       <div className='footLayer'>
         <FontAwesomeIcon icon={faHeart} className='heartIcon' />
-        <p className='ptag'>{item.price}</p>
+        <p className='ptag'>{itemObject.price}</p>
       </div>
     </div>
   );
