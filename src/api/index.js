@@ -1,10 +1,18 @@
-import mock from '../mock.json';
-export const getItemBySlug = itemSlug => {
-  return mock.find(item => item.slug === itemSlug);
+import axios from 'axios';
+export const getItems = async () => {
+  const response = await axios.get('http://localhost:3001/items');
+  console.log(response.data);
+  return response.data;
 };
 
-export const getUserProductList = nickName => {
-  const userProductList = mock.filter(mockItem => mockItem.nickName === nickName);
+export const getItemBySlug = async itemSlug => {
+  const data = await getItems();
+  return data.find(item => item.slug === itemSlug);
+};
+
+export const getUserProductList = async nickName => {
+  const data = await getItems();
+  const userProductList = data.filter(mockItem => mockItem.nickName === nickName);
   console.log(nickName);
   return userProductList;
 };
