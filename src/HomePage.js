@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import ProductPage from './ProductPage';
 import './HomePage.css';
-import items from './mock.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { getItems } from './api';
 
 function HomePage() {
-  const [itemObject, setItemObject] = useState(items);
-  console.log(items);
-  const handleUpdateClick = () => {
-    setItemObject(itemObject);
+  const [itemObject, setItemObject] = useState([]);
+  const getList = async () => {
+    const data = await getItems();
+    setItemObject(data);
   };
+  useEffect(() => {
+    getList();
+  }, []);
+
   return (
     <div>
       <header className='mainNav'>
         <p className='mainHeaderP'>홈</p>
         <FontAwesomeIcon icon={faBars} className='barIcon' />
       </header>
-      <ProductPage itemObject={itemObject} onClick={handleUpdateClick}></ProductPage>
+      <ProductPage itemObject={itemObject}></ProductPage>
       <div className='mainFoot'>
         <button className='mainFootContainer1'>
           <FontAwesomeIcon icon={faHouse} />
