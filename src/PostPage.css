@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  font-weight: 700;
+  font-size: large;
+}
+.postPageTitle {
+  margin-left: 45%;
+}
+#form {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+  background-color: rgba(237, 117, 20, 0.5);
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 3px solid rgb(138, 119, 119);
+}
+input[type='file'] {
+  margin-bottom: 2rem;
+}
+.categoryContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border: 0.4rem solid rgb(236, 137, 137);
+  padding: 1rem 0.5rem;
+  color: rgb(86, 29, 156);
+}
+input[type='text'],
+textarea {
+  height: auto;
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.8em 0.5em; /* 여백 설정 */
+  margin-bottom: 2rem;
+  border: 0.4rem solid rgb(236, 137, 137);
+}
+input[type='submit'] {
+  margin: 0 auto;
+  display: block;
+  width: 20vw;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  padding: 0.5rem 0;
+  background-color: rgb(236, 137, 137);
+}
+.categoryBtn {
+  border-style: none;
+  cursor: pointer;
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.7rem;
+  background-color: rgb(236, 137, 137);
+}
+input[type='submit']:hover,
+.categoryBtn:hover {
+  font-weight: bolder;
+}

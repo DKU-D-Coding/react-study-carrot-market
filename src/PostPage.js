@@ -3,6 +3,7 @@ import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { useState } from 'react';
 import ModalBasic from './ModalBasic';
+import './PostPage.css';
 // import { eventWrapper } from '@testing-library/user-event/dist/utils';
 
 function PostPage() {
@@ -38,13 +39,13 @@ function PostPage() {
 
   return (
     <div>
-      <h1>안녕</h1>
       <header>
         <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
-        <p>중고거래 글쓰기</p>
+        <p className='postPageTitle'>중고거래 글쓰기</p>
       </header>
       <form id='form' onSubmit={handleSubmit}>
         <input type='file' />
+
         <input
           type='text'
           placeholder='제목'
@@ -52,8 +53,14 @@ function PostPage() {
           value={formValue.title}
           onChange={handleChange}
         />
-        <button onClick={openModal}>모달팝업</button>
-        {category}
+
+        <div className='categoryContainer'>
+          카테고리: {category}
+          <button onClick={openModal} className='categoryBtn'>
+            카테고리 선택
+          </button>
+        </div>
+
         <ModalBasic
           open={modalOpen}
           close={closeModal}
@@ -61,6 +68,7 @@ function PostPage() {
           categoryList={categoryList}
           setCategory={setCategory}
         ></ModalBasic>
+
         <input
           type='text'
           placeholder='가격(원)'
@@ -68,13 +76,15 @@ function PostPage() {
           value={formValue.price}
           onChange={handleChange}
         />
+
         <textarea
           placeholder={textareaContent}
           name='content'
           value={formValue.content}
           onChange={handleChange}
         />
-        <input type='submit' name='완료' />
+
+        <input type='submit' name='submitbtn' value='완료' />
       </form>
     </div>
   );
