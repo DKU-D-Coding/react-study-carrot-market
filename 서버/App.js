@@ -17,6 +17,17 @@ let products = [];
   });
 })();
 
+let seller = [];
+  (() => {
+    fetch("/hello")
+        .then((response) => {
+            return response.json();
+        })
+        .then(function (data) {
+            seller = data;
+        });
+  })();
+
 let product = [ 
   { pid: 1, pname: "노트북", price: "1,330,000"},
   { pid: 2, pname: "스마트폰", price: "770,000"},
