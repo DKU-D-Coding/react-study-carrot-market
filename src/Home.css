@@ -1,0 +1,120 @@
+.home {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 110px;
+  }
+
+  .home img {
+    width: 100px;
+    height: 100px;
+  }
+  
+
+
+
+  .home_header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    border-bottom: 1px solid gray;
+    background-color: white;
+    z-index: 100;
+  }
+
+  .home_header img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding-right:30px;
+    padding-top: 7px;
+  }
+  
+  .home_header h1 { 
+    cursor: pointer;
+    padding-left : 30px;
+    font-size: 40px;
+    padding-bottom : 10px;
+  }
+  
+  
+  
+
+
+  
+  .product_lists {
+    display: flex;
+    margin: 20px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .home .product_lists div {
+    margin-left: 20px;
+  }
+  
+  .home .product_lists div h3 {
+    margin: 0;
+    padding-top: 15px;
+    text-align: left;
+  }
+ 
+  .home .heart img {
+    position: absolute;
+    left: 330px;
+    top:50%;
+    width: 25px;
+    height: 25px;
+  }
+
+  .home .heart h2 {
+    position: absolute;
+    left: 370px;
+    top: 27%;
+  }
+
+
+
+
+  .home_footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+  
+    display: flex;
+    justify-content: space-around;
+    
+    border-top: 2px solid gray;
+    background-color: white;
+  }
+  
+  .home_footer h2 {
+    margin: 0;
+  }
+  
+  .home_footer img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .home_footer .home_button {
+    cursor: pointer;
+  }
+  
+  .home_footer .my_button {
+    cursor: pointer;
+  }
+  
+  .home .plus_button img {
+    position: fixed;
+    right: 15px;
+    bottom: 145px;
+    cursor: pointer;
+  }
