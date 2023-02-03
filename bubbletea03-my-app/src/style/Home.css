@@ -1,0 +1,91 @@
+.home {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 110px;
+}
+
+.home .header {
+  position: fixed; /* 위에 고정 */
+  top: 0;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 2px solid gray;
+  background-color: white;
+}
+
+.home .header * {
+  padding: 20px;
+}
+
+.home img {
+  width: 100px;
+  height: 100px;
+}
+
+.home .item-card {
+  display: flex;
+  
+  margin: 20px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+
+
+.home .item-card div {
+  margin-left: 20px;
+}
+
+.home .item-card div h3 {
+  margin-top: 0;
+}
+
+
+
+.home .header img {
+  width: 50px;
+  height: 50px;
+  
+  cursor: pointer;
+}
+
+.home .footer {
+  position: fixed; /* 아래에 고정 */
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  justify-content: space-around;
+  
+  border-top: 2px solid gray;
+  background-color: white;
+}
+
+.home .footer h2 {
+  margin: 0;
+}
+
+.home .footer img {
+  width: 70px;
+  height: 70px;
+}
+
+.home .footer .home-button, .mycarrot-button {
+  cursor: pointer;
+}
+
+
+.home .plus-button img {
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  right: 10px;
+  bottom: 120px;
+
+  cursor: pointer;
+}
