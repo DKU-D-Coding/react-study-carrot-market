@@ -5,80 +5,108 @@
       "title": "헤드셋",
       "price": "160000",
       "heart": 1,
-      "imageUrl": "https://cdn-pro-web-220-178.cdn-nhncommerce.com/luxecotr1348_godomall_com/data/goods/20/09/40/1000000567/1000000567_detail_019.jpg",
+      "imageUrl": [
+        "https://cdn-pro-web-220-178.cdn-nhncommerce.com/luxecotr1348_godomall_com/data/goods/20/09/40/1000000567/1000000567_detail_019.jpg",
+        "https://cdn.funshop.co.kr/products/0000089025/vs_image800.jpg",
+        "https://img.danawa.com/prod_img/500000/060/835/img/6835060_1.jpg?shrink=500:500&_v=20210120102533"
+      ],
       "slug": "item1",
       "nickName": "user1",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "디지털 기기"
     },
     {
       "id": 2,
       "title": "전자피아노",
       "price": "200000",
       "heart": 0,
-      "imageUrl": "http://img4.tmon.kr/cdn3/deals/2019/12/21/2861622638/2861622638_front_db435a1f3a.jpg",
+      "imageUrl": [
+        "http://img4.tmon.kr/cdn3/deals/2019/12/21/2861622638/2861622638_front_db435a1f3a.jpg",
+        "https://img.danawa.com/prod_img/500000/473/818/img/13818473_1.jpg?shrink=330:330&_v=20210602092230"
+      ],
       "slug": "item2",
       "nickName": "user1",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "기타 중고물품"
     },
     {
       "id": 3,
       "title": "아디다스 신발",
       "price": "90000",
       "heart": 1,
-      "imageUrl": "https://img.29cm.co.kr/next-edition/2019/06/12/5c2b28cbb30246aa9631d2d6e47efccb_20190612112226.jpg?width=420",
+      "imageUrl": [
+        "https://img.29cm.co.kr/next-edition/2019/06/12/5c2b28cbb30246aa9631d2d6e47efccb_20190612112226.jpg?width=420",
+        "http://m.hooligan.kr/web/product/big/202203/a1af2c471307f6a710be6db467078b51.jpg"
+      ],
       "slug": "item3",
       "nickName": "user2",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "남성패션/잡화"
     },
     {
       "id": 4,
       "title": "패딩",
       "price": "89900",
       "heart": 1,
-      "imageUrl": "https://m.maninstore.co.kr/web/product/big/202211/8ec8a9543701e65aaed23ab534fe32c2.jpg",
+      "imageUrl": [
+        "https://m.maninstore.co.kr/web/product/big/202211/8ec8a9543701e65aaed23ab534fe32c2.jpg"
+      ],
       "slug": "item4",
       "nickName": "user2",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "남성패션/잡화"
     },
     {
       "id": 5,
       "title": "파이프 렌치",
       "price": "50000",
       "heart": 1,
-      "imageUrl": "https://m.able119.co.kr/web/product/big/202102/b4588bdb9ea520674a436fdb51ccd9a7.jpg",
+      "imageUrl": [
+        "https://m.able119.co.kr/web/product/big/202102/b4588bdb9ea520674a436fdb51ccd9a7.jpg"
+      ],
       "slug": "item5",
       "nickName": "user3",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "기타 중고물품"
     },
     {
       "id": 6,
       "title": "삼성노트북",
       "price": "600000",
       "heart": 1,
-      "imageUrl": "https://post-phinf.pstatic.net/MjAxOTAyMjVfMjMw/MDAxNTUxMDk5MjE4ODkx.9tG6GnNkdce1b4I1vehc7WLaChOOINNxyssMl8ZZfogg.uAw7HbGdW3fYAJltmbZkZWvn1q8_usUTR50dLaSANRgg.JPEG/top4901.jpg?type=w1200",
+      "imageUrl": [
+        "https://post-phinf.pstatic.net/MjAxOTAyMjVfMjMw/MDAxNTUxMDk5MjE4ODkx.9tG6GnNkdce1b4I1vehc7WLaChOOINNxyssMl8ZZfogg.uAw7HbGdW3fYAJltmbZkZWvn1q8_usUTR50dLaSANRgg.JPEG/top4901.jpg?type=w1200"
+      ],
       "slug": "item6",
       "nickName": "user3",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "디지털 기기"
     },
     {
       "id": 7,
       "title": "머그컵",
       "price": "5000",
       "heart": 1,
-      "imageUrl": "https://mughome.com/web/product/big/201812/4961be0260d322033657a3d97845e443.jpg",
+      "imageUrl": [
+        "https://mughome.com/web/product/big/201812/4961be0260d322033657a3d97845e443.jpg"
+      ],
       "slug": "item7",
       "nickName": "user4",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "기타 중고물품"
     },
     {
       "id": 8,
       "title": "청바지",
       "price": "20000",
       "heart": 1,
-      "imageUrl": "http://jparkers.godohosting.com/upload/item/jean2022Bl_list_01.jpg",
+      "imageUrl": ["http://jparkers.godohosting.com/upload/item/jean2022Bl_list_01.jpg"],
       "slug": "item8",
       "nickName": "user5",
-      "content": "제품이 좋습니다."
+      "content": "제품이 좋습니다.",
+      "category": "남성패션/잡화"
     }
-  ]
+  ],
+  "user": [{}],
+  "like": [{}]
 }
