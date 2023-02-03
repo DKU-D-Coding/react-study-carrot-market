@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { getUserProductList } from './api';
-import './ProductPage.css';
+import './ProductCard.css';
 import UserCard from './UserCard';
-function UserProduct({ nickName }) {
+function UserProduct({ nickName = 'user1' }) {
   console.log(nickName);
   const [userProductList, setUserProductList] = useState([]);
   const getProduct = async nickName => {

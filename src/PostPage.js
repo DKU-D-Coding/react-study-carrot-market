@@ -4,11 +4,30 @@ import React from 'react';
 import { useState } from 'react';
 import ModalBasic from './ModalBasic';
 import './PostPage.css';
+import { Link } from 'react-router-dom';
 // import { eventWrapper } from '@testing-library/user-event/dist/utils';
 
 function PostPage() {
   //category
-  const categoryList = ['디지털기기', '생활가전', '가구/인테리어', '유아', '생활/가공식품'];
+  const categoryList = [
+    '디지털기기',
+    '생활가전',
+    '가구/인테리어',
+    '유아동',
+    '생활/가공식품',
+    '유아도서',
+    '스포츠/레저',
+    '여성잡화',
+    '여성의류',
+    '남성패션/잡화',
+    '게임/취미',
+    '뷰티/미용',
+    '반려동물용품',
+    '도서/티켓/음반',
+    '식물',
+    '기타 중고물품',
+    '중고차',
+  ];
   const [category, setCategory] = useState('디지털기기');
 
   // 모달창 노출 여부 state
@@ -40,7 +59,10 @@ function PostPage() {
   return (
     <div>
       <header>
-        <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
+        <Link to='/'>
+          <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
+        </Link>
+
         <p className='postPageTitle'>중고거래 글쓰기</p>
       </header>
       <form id='form' onSubmit={handleSubmit}>
@@ -64,7 +86,7 @@ function PostPage() {
         <ModalBasic
           open={modalOpen}
           close={closeModal}
-          header='Modal heading'
+          header='카테고리'
           categoryList={categoryList}
           setCategory={setCategory}
         ></ModalBasic>

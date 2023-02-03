@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import ProductPage from './ProductPage';
 import './HomePage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { getItems } from './api';
+import ProductCard from './ProductCard';
 
 function HomePage() {
-  const [itemObject, setItemObject] = useState([]);
+  const [itemList, setItemList] = useState([]);
   const getList = async () => {
     const data = await getItems();
-    setItemObject(data);
+    setItemList([...itemList, ...data]);
   };
   useEffect(() => {
     getList();
@@ -23,7 +23,7 @@ function HomePage() {
         <p className='mainHeaderP'>홈</p>
         <FontAwesomeIcon icon={faBars} className='barIcon' />
       </header>
-      <ProductPage itemObject={itemObject}></ProductPage>
+      <ProductCard itemList={itemList}></ProductCard>
       <div className='mainFoot'>
         <button className='mainFootContainer1'>
           <FontAwesomeIcon icon={faHouse} />
