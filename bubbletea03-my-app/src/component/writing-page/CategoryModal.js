@@ -5,8 +5,8 @@ export default function CategoryModal({ close, select }) {
     return (
         <Container>
             <Background onClick={close}/>
-            <section>
-                <div className='categories'>
+            <Modal>
+                <Categories>
                     {
                         CATEGORY_LIST.map((category, idx) => 
                             <button onClick={() => {select(category); close();}} key={idx}>
@@ -14,8 +14,8 @@ export default function CategoryModal({ close, select }) {
                             </button>
                             )
                     }
-                </div>
-            </section>
+                </Categories>
+            </Modal>
         </Container>
     );
 }
@@ -32,33 +32,32 @@ const Container = styled.div`
     right: 0;
     left: 0;
     bottom: 0;
+`
 
-    section {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        height: 90%;
-        background-color: white;
+const Modal = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    background-color: white;
+`
 
-        .categories {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            padding: 40px;
-            box-sizing: border-box;
+const Categories = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
 
-            button {
-                height: 100%;
-                
-                &:hover {
-                    background-color: lightgray;
-                    transition: 0.2s;
-                }
-            }
-
+    button {
+        height: 100%;
+        
+        &:hover {
+            background-color: lightgray;
+            transition: 0.2s;
         }
     }
 `

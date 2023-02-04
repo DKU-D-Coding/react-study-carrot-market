@@ -15,9 +15,9 @@ export default function ProductPage() {
         <Container>
             <TopNav/>
             <BottomNav/>
-            <div className="top-image">
+            <TopImage>
                 <img alt="대표 이미지" src="https://media.istockphoto.com/id/1352173787/photo/sunset.jpg?b=1&s=170667a&w=0&k=20&c=jKDMxKXALm540OTFB3vMIDFYwOEedauorSpvLgjkU1M="/>
-            </div>
+            </TopImage>
             <UserContent item={item}/>
             <UserItemList userName={item.sellerName}/>
         </Container>
@@ -27,8 +27,8 @@ export default function ProductPage() {
 const Container = styled.div`
     padding-top: 80px;
     padding-bottom: 100px;
+`
 
-    .top-image img {
-        width: 100%;
-    }
+const TopImage = styled.div`
+    width: 100%;
 `

@@ -8,10 +8,8 @@ export default function UserItemList({ userName }) {
     return (
         <>
             <HeaderBox>
-                <div className="user-name">{userName}님의 판매 상품</div>
-                <button>
-                    <div className="show-all">모두보기</div>
-                </button>
+                <div>{userName}님의 판매 상품</div>
+                <button>모두보기</button>
             </HeaderBox>
             <ItemListBox>
                 {
@@ -28,11 +26,11 @@ const HeaderBox = styled.div`
     justify-content: space-between;
     padding-top: 20px;
 
-    .user-name {
+    div {
         margin-left: 20px;
     }
     
-    .show-all {
+    button {
         margin-right: 20px;
         color: gray;
     }

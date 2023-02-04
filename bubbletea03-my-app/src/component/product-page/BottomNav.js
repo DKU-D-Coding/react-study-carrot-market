@@ -4,7 +4,7 @@ export default function BottomNav() {
     return (
         <Container>
             <img alt="빈 하트" src="/icon/heart.png"/>
-            <div className="mycarrot-button">
+            <div>
                 <h3>가격</h3>
             </div>
         </Container>

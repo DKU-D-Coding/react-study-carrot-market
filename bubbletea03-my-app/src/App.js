@@ -8,16 +8,14 @@ import WritingPage from './page/WritingPage';
 
 function App() {
   return (
-    <div className="App">
-       <BrowserRouter>
-			<Routes>
-				<Route path="*" element={<div> Not Found </div>} />
-				<Route path="/" element={<Home/>} />
-				<Route path="/product-page/:itemId" element={<ProductPage/>} />
-				<Route path="/writing" element={<WritingPage/>} />
-			</Routes>
-		</BrowserRouter>
-    </div>
+	<BrowserRouter>
+		<Routes>
+			<Route path="*" element={<div> Not Found </div>} />
+			<Route path="/" element={<Home/>} />
+			<Route path="/product-page/:itemId" element={<ProductPage/>} />
+			<Route path="/writing" element={<WritingPage/>} />
+		</Routes>
+	</BrowserRouter>
   );
 }
 
