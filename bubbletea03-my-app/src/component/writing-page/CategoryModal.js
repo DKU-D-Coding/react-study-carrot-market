@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function CategoryModal({ close, select }) {
     return (
-        <StyledBlock>
+        <Container>
             <Background onClick={close}/>
             <section>
                 <div className='categories'>
@@ -16,7 +16,7 @@ export default function CategoryModal({ close, select }) {
                     }
                 </div>
             </section>
-        </StyledBlock>
+        </Container>
     );
 }
 
@@ -25,7 +25,7 @@ const Background = styled.div`
     height: 100%;
 `
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;

@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export default function TopNav() {
     return (
-        <StyledBlock>
+        <Container>
             <h2>홈</h2>
             <button>
                 <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
             </button>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     position: fixed; /* 위에 고정 */
     top: 0;
     width: 100%;

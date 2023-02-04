@@ -12,7 +12,7 @@ export default function ProductPage() {
 
     window.scrollTo(0, 0);
     return (
-        <StyledBlock>
+        <Container>
             <TopNav/>
             <BottomNav/>
             <div className="top-image">
@@ -20,11 +20,11 @@ export default function ProductPage() {
             </div>
             <UserContent item={item}/>
             <UserItemList userName={item.sellerName}/>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     padding-top: 80px;
     padding-bottom: 100px;
 

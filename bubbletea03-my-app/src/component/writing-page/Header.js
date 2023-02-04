@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Header() {
     const navigate = useNavigate();
     return (
-        <StyledBlock>
+        <Container>
             <button onClick={() => {navigate(-1)}}>
                 <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
             </button>
@@ -12,11 +12,11 @@ export default function Header() {
             <button>
                 <h2>완료</h2>
             </button>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;

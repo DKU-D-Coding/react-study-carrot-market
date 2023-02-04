@@ -9,7 +9,7 @@ export default function Home() {
     window.scrollTo(0, 0);
     
     return (
-        <StyledBlock>
+        <Container>
             <TopNav/>
             {
                 itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
@@ -20,11 +20,11 @@ export default function Home() {
                     <img alt="플러스 버튼" src="/icon/plus.png"/>
                 </PlusButton>
             </Link>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     text-align: center;
     padding-top: 80px;
     padding-bottom: 110px;

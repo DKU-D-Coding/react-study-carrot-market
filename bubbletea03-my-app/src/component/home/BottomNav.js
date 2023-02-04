@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function BottomNav() {
     return (
-        <StyledBlock>
+        <Container>
             <button>
                 <img alt="홈 아이콘" src="/icon/home.png"/>
                 <h2>홈</h2>
@@ -11,11 +11,11 @@ export default function BottomNav() {
                 <img alt="사람 아이콘" src="/icon/person.png"/>
                 <h2>나의 당근</h2>
             </button>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     position: fixed; /* 아래에 고정 */
     bottom: 0;
     width: 100%;

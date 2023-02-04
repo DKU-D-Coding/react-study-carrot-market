@@ -12,7 +12,7 @@ export default function WritingPage() {
     const [selectedCategory, setSelectedCategory] = useState("");
 
     return ( // TODO: html 전부 완성되면, 컴포넌트화 시키기
-        <StyledBlock>
+        <Container>
             <Header/>
             { 
                 categoryModalState
@@ -34,11 +34,11 @@ export default function WritingPage() {
             <div className='content'>
                 <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다."/>
             </div>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     .title, .price {
         height: 70px;
         border-bottom: 1px solid gray;

@@ -19,7 +19,7 @@ export default function PhotoUpload() {
     }
 
     return (
-        <StyledBlock>
+        <Container>
             <Label>
                 <Img alt="카메라" src='/icon/camera.png'/>
                 <input type="file" accept="image/*" onChange={uploadImages} multiple/>
@@ -34,11 +34,11 @@ export default function PhotoUpload() {
                     </div>
                     )
             }
-        </StyledBlock>
+        </Container>
     )
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     display: flex;
     height: 100px;
 

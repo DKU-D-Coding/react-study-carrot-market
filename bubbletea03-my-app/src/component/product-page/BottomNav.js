@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export default function BottomNav() {
     return (
-        <StyledBlock>
+        <Container>
             <img alt="빈 하트" src="/icon/heart.png"/>
             <div className="mycarrot-button">
                 <h3>가격</h3>
             </div>
-        </StyledBlock>
+        </Container>
     );
 }
 
-const StyledBlock = styled.div`
+const Container = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
