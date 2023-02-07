@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import CategoryModal from '../component/writing-page/CategoryModal';
 import Header from '../component/writing-page/Header';
 import PhotoUpload from '../component/writing-page/PhotoUpload';
+import { debounce } from 'throttle-debounce';
+import { useEffect } from 'react';
 
 
 
@@ -10,6 +12,24 @@ import PhotoUpload from '../component/writing-page/PhotoUpload';
 export default function WritingPage() {
     const [categoryModalState, setCategoryModalState] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
+
+    let [writingState, setWritingState] = useState({
+        imgUrls: [],
+        title: "",
+        category: "",
+        price: "",
+        content: "",
+    });
+
+    // ONLY MOUNT
+    useEffect(() => {
+        if (localStorage.getItem('writingState'))
+            setWritingState(JSON.parse(localStorage.getItem('writingState')))
+    }, [])
+    
+    const saveWritingState = function() {
+        localStorage.setItem('writingState', JSON.stringify(writingState));
+    }
 
     return (<>
         <Header/>
@@ -19,7 +39,14 @@ export default function WritingPage() {
         }
         <PhotoUpload/>
         <InputBox>
-            <input type="text" placeholder="제목"/>
+            <input type="text" placeholder="제목" value={writingState.title} 
+                onChange={(e) => {
+                    setWritingState({...writingState, title: e.target.value});
+                    setTimeout(() => {
+                        console.log(writingState);
+                        localStorage.setItem('writingState', JSON.stringify(writingState));}
+                    , 1000)}
+                }/>
         </InputBox>
         <CategoryBox>
             <h3>{selectedCategory || "카테고리"}</h3>
@@ -28,7 +55,7 @@ export default function WritingPage() {
             </button>
         </CategoryBox>
         <InputBox>
-            <input type="text" placeholder="가격(원)"/>
+            <input type="number" placeholder="가격(원)"/>
         </InputBox>
         <ContentBox>
             <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다."/>

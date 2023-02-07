@@ -12,6 +12,7 @@ function App() {
 			<Route path="/" element={<Home/>} />
 			<Route path="/product-page/:itemId" element={<ProductPage/>} />
 			<Route path="/writing" element={<WritingPage/>} />
+			<Route path="/select-category" element={<div></div>} />
 		</Routes>
 	</BrowserRouter>
   );
