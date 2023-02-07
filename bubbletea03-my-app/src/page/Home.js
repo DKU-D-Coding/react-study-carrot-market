@@ -1,11 +1,11 @@
 import ItemCard from "../component/ItemCard.js";
 import itemData from "../data/ItemData.js";
 import styled from "styled-components";
-import TopNav from './../component/home/TopNav';
 import BottomNav from './../component/home/BottomNav';
 import { Link } from 'react-router-dom';
 import { testState } from "../RecoilStates.js";
 import { useRecoilState } from "recoil";
+import TopNav from "../component/TopNav.js";
 
 export default function Home() {
     window.scrollTo(0, 0);
@@ -14,7 +14,12 @@ export default function Home() {
     
     return (
         <Container>
-            <TopNav/>
+            <TopNav left={<h2>홈</h2>}
+                right={
+                <button>
+                    <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
+                </button>
+            }/>
             <div onClick={() => {setTest("ㅎㅁㄴㅇㄹ")}}>ddd{test}</div>
             {
                 itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)

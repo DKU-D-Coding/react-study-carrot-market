@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import CategoryModal from '../component/writing-page/CategoryModal';
-import Header from '../component/writing-page/Header';
 import PhotoUpload from '../component/writing-page/PhotoUpload';
-import { debounce } from 'throttle-debounce';
 import { useEffect } from 'react';
+import TopNav from './../component/TopNav';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function WritingPage() {
+    const navigate = useNavigate()
     const [categoryModalState, setCategoryModalState] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -32,7 +33,18 @@ export default function WritingPage() {
     }
 
     return (<>
-        <Header/>
+        <TopNav 
+            left={
+                <button onClick={() => {navigate(-1)}}>
+                    <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
+                </button>
+            }
+            center={<h2>중고거래 글쓰기</h2>}
+            right={
+            <button>
+                <h2>완료</h2>
+            </button>
+            }/>
         { 
             categoryModalState
             && <CategoryModal close={() => {setCategoryModalState(false)}} select={setSelectedCategory}/>
