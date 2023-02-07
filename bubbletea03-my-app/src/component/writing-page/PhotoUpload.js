@@ -12,6 +12,8 @@ export default function PhotoUpload() {
             reader.onloadend = () => { setImgUrlArr([...imgUrlArr, reader.result]) };
             reader.readAsDataURL(file);
         });
+        console.log("파일 경로: " + e.target.value);
+        e.target.value = ''; // onChange에서 항상 작동해야 하기 때문에, value를 초기화한다.
     }
 
     const deleteImg = function(targetIndex) {
