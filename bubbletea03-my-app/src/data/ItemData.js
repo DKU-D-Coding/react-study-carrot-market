@@ -9,6 +9,7 @@ const itemData = [
         postTime: "2022/01/25",
         content: "안녕하세요 아이폰 팔고있습니다", 
         likeCount: 0,
+        imgSrc: "https://cdn.weekly.chosun.com/news/photo/202208/21784_42359_1424.jpg"
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ const itemData = [
         postTime: "2022/01/24",
         content: "키보드를 팔고있습니다 ~~!", 
         likeCount: 0,
+        imgSrc: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbTvbmz%2FbtqAkxWmae8%2FxXrMIEzBdXsDs4RW5lKZ71%2Fimg.jpg",
     },
     {
         id: 3,
@@ -31,6 +33,7 @@ const itemData = [
         postTime: "2022/01/24",
         content: "키보드를 팔고있습니다 ~~!", 
         likeCount: 0,
+        imgSrc: "https://www.itworld.co.kr/files/itworld/2021/09_01/annepro-100900624-orig.jpgautowebp.jpeg",
     }
 
 ];

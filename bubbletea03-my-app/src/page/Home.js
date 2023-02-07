@@ -4,13 +4,18 @@ import styled from "styled-components";
 import TopNav from './../component/home/TopNav';
 import BottomNav from './../component/home/BottomNav';
 import { Link } from 'react-router-dom';
+import { testState } from "../RecoilStates.js";
+import { useRecoilState } from "recoil";
 
 export default function Home() {
     window.scrollTo(0, 0);
+
+    const [test, setTest] = useRecoilState(testState);
     
     return (
         <Container>
             <TopNav/>
+            <div onClick={() => {setTest("ㅎㅁㄴㅇㄹ")}}>ddd{test}</div>
             {
                 itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
             }

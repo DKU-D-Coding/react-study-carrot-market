@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function UserContent({ item }) {
     return (<>
         <ProfileBox>
-            <img alt="사람 아이콘" src="/icon/person.png"/>
+            <img alt="사람 아이콘" src="/icon/person_profile.png"/>
             <div>{item.sellerName}</div>
         </ProfileBox>
         <PostBox>

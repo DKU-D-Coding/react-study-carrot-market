@@ -23,3 +23,6 @@
 - [이가은님 PR](https://github.dev/DKU-D-Coding/react-study-carrot-market/pull/11)
 
 + [[HTML5] 파일(File) API에 대해 알아보자](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=horajjan&logNo=220463053828)
+
+### 3주차
+- [[Recoil] Recoil 200% 활용하기](https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)

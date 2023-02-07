@@ -4,8 +4,6 @@ import Home from './page/Home';
 import ProductPage from './page/ProductPage';
 import WritingPage from './page/WritingPage';
 
-// TODO: Header랑 Footer을 TopNav, BottomNav로 바꾸자
-
 function App() {
   return (
 	<BrowserRouter>
