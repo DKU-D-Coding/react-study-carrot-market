@@ -6,6 +6,7 @@ import styled from "styled-components"
 const CardBox = styled.div`
     display: flex;
     height: 200px;
+    width: 100%;
     align-items: center;
     border-bottom: 1px black solid;
 
@@ -20,39 +21,57 @@ const CardBox = styled.div`
     }
 
     img {
+        width: 120px;
         height: 120px;
         border: 1px solid black;
     }
-
-    .cardDetail{
-        display: flex;
-        width: 100%;
-        padding-left: 15px;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .title {
-        font-size: 20px;
-    }
-
-    .like {
-        text-align: right;
-        font-size: 25px;
-    }
 `
-function Card({ goodsId, imgSrc, title, price, like }) {
+const CardDetail = styled.div`
+    display: flex;
+    width: 100%;
+    max-width: calc(100% - 120px);
+    padding-left: 15px;
+    flex-direction: column;
+    justify-content: center;
+
+`
+const CardTopDetail = styled.div`
+    display: flex;
+    flex-direction: column;
+
+
+`
+const Title = styled.b`
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+`
+const Category = styled.span`
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+`
+const Price = styled.p`
+    margin: 0;
+`
+const Like = styled.p`
+    text-align: right;
+    font-size: 25px;
+`
+function Card({ goodsId, imgSrc, title, price, like, categoryName }) {
     return (
             <CardBox>
                 <Link to={'/product/' + goodsId}>
                     <img src={imgSrc}/>
-                    <div className="cardDetail">
-                        <div>
-                            <b className="title">{title}</b>
-                            <p>{price}원</p>
-                        </div>
-                        <p className="like"><FontAwesomeIcon icon={faHeart}/> {like}</p>
-                    </div>
+                    <CardDetail>
+                        <CardTopDetail>
+                            <Title>{title}</Title>
+                            <Category>{categoryName}</Category>
+                            <Price>{price}원</Price>
+                        </CardTopDetail>
+                        <Like><FontAwesomeIcon icon={faHeart}/> {like}</Like>
+                    </CardDetail>
                 </Link>
             </CardBox>
     )
