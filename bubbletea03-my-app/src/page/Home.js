@@ -19,6 +19,7 @@ export default function Home() {
                 <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
             </Link>
         }/>
+        카테고리: {homeCategory || "전체"}
         {
             homeCategory ?
                 itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
