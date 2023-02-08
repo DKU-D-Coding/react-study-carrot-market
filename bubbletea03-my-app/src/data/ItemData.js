@@ -28,7 +28,7 @@ const itemData = [
         title: "키보드팝니다@@@@@@@22",
         price: 300002,
         itemName: "키보드", 
-        sellerName: "키보드파는사람22", 
+        sellerName: "키보드파는사람", 
         category: "디지털기기", 
         postTime: "2022/01/24",
         content: "키보드를 팔고있습니다 ~~!", 

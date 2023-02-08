@@ -13,7 +13,6 @@ export default function ProductPage() {
     const navigate = useNavigate();
     const params = useParams();
     const [ item ] = itemData.filter(item => item.id == params.itemId);
-    const [test, setTest] = useRecoilState(testState);
 
     window.scrollTo(0, 0);
     return (<>
@@ -25,13 +24,12 @@ export default function ProductPage() {
                 <img alt="홈 아이콘" src="/icon/home.png"/>
             </Link>
         </>}/>
-        <BottomNav/>
-        <div onClick={() => {setTest("ㅇㅇㅋㅋ")}}>ddd{test}</div>
         <TopImage>
             <img alt="대표 이미지" src="https://media.istockphoto.com/id/1352173787/photo/sunset.jpg?b=1&s=170667a&w=0&k=20&c=jKDMxKXALm540OTFB3vMIDFYwOEedauorSpvLgjkU1M="/>
         </TopImage>
         <UserContent item={item}/>
         <UserItemList userName={item.sellerName}/>
+        <BottomNav/>
     </>);
 }
 

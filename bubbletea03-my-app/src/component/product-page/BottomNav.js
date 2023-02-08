@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export default function BottomNav() {
-    return (
+    return (<>
         <Container>
             <img alt="빈 하트" src="/icon/heart.png"/>
             <div>
                 <h3>가격</h3>
             </div>
         </Container>
-    );
+        <SpaceBox/>
+    </>);
 }
 
 const Container = styled.div`
@@ -33,4 +34,8 @@ const Container = styled.div`
 
         border-right: 2px solid gray;
     }
+`
+
+const SpaceBox = styled.div`
+    height: 100px;
 `

@@ -9,8 +9,6 @@ import TopNav from "../component/TopNav.js";
 
 export default function Home() {
     window.scrollTo(0, 0);
-
-    const [test, setTest] = useRecoilState(testState);
     
     return (<>
         <TopNav left={<h2>홈</h2>}
@@ -19,7 +17,6 @@ export default function Home() {
                 <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
             </button>
         }/>
-        <div onClick={() => {setTest("ㅎㅁㄴㅇㄹ")}}>ddd{test}</div>
         {
             itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
         }
