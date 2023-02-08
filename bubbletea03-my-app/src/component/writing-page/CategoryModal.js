@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CATEGORY_LIST } from '../../data/Consts';
 
 
 export default function CategoryModal({ close, select }) {
@@ -61,11 +62,3 @@ const Categories = styled.div`
         }
     }
 `
-
-const CATEGORY_LIST = [
-    "디지털기기", "생활가전", "가구/인테리어",
-    "유아동", "생활/가공식품", "유아도서",
-    "여성의류", "남성패션/잡화", "게임/취미",
-    "뷰티/미용", "반려동물용품", "도서/티켓/음반",
-    "식물", "기타 중고물품", "중고차"
-]

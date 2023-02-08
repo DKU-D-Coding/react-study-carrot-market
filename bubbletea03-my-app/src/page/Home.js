@@ -3,19 +3,19 @@ import itemData from "../data/ItemData.js";
 import styled from "styled-components";
 import BottomNav from './../component/home/BottomNav';
 import { Link } from 'react-router-dom';
-import { testState } from "../RecoilStates.js";
-import { useRecoilState } from "recoil";
 import TopNav from "../component/TopNav.js";
 
 export default function Home() {
     window.scrollTo(0, 0);
+
+    // TODO : RecoilValue갖고오기
     
     return (<>
         <TopNav left={<h2>홈</h2>}
             right={
-            <button>
+            <Link to="/select-category">
                 <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
-            </button>
+            </Link>
         }/>
         {
             itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)

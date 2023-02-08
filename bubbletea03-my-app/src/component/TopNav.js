@@ -35,6 +35,7 @@ const Container = styled.div`
 
     div {
         display: flex;
+        min-width: 50px;
 
         button, a, img {
             width: 50px;
