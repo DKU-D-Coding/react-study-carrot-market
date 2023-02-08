@@ -12,33 +12,26 @@ export default function Home() {
 
     const [test, setTest] = useRecoilState(testState);
     
-    return (
-        <Container>
-            <TopNav left={<h2>홈</h2>}
-                right={
-                <button>
-                    <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
-                </button>
-            }/>
-            <div onClick={() => {setTest("ㅎㅁㄴㅇㄹ")}}>ddd{test}</div>
-            {
-                itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
-            }
-            <BottomNav/>
-            <Link to="/writing">
-                <PlusButton>
-                    <img alt="플러스 버튼" src="/icon/plus.png"/>
-                </PlusButton>
-            </Link>
-        </Container>
-    );
+    return (<>
+        <TopNav left={<h2>홈</h2>}
+            right={
+            <button>
+                <img alt="메뉴 버튼" src="/icon/hamburger.png"/>
+            </button>
+        }/>
+        <div onClick={() => {setTest("ㅎㅁㄴㅇㄹ")}}>ddd{test}</div>
+        {
+            itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
+        }
+        <BottomNav/>
+        <Link to="/writing">
+            <PlusButton>
+                <img alt="플러스 버튼" src="/icon/plus.png"/>
+            </PlusButton>
+        </Link>
+    </>);
 }
 
-const Container = styled.div`
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 110px;
-`
 
 const PlusButton = styled.button`
     position: fixed;

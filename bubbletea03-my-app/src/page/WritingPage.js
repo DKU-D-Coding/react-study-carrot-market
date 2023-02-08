@@ -46,28 +46,28 @@ export default function WritingPage() {
             }/>
         { 
             categoryModalState
-            && <CategoryModal close={() => {setCategoryModalState(false)}} 
-                select={function(category) {setWritingState({...writingState, category})}}/>
+            && <CategoryModal close={() => setCategoryModalState(false)} 
+                select={(category) => setWritingState({...writingState, category})}/>
         }
         <PhotoUpload imgUrlArr={writingState.imgUrlArr}
-            setImgUrlArr={function(imgUrlArr) {setWritingState({...writingState, imgUrlArr})}}/>
+            setImgUrlArr={(imgUrlArr) => setWritingState({...writingState, imgUrlArr})}/>
         <InputBox>
             <input type="text" placeholder="제목" value={writingState.title} 
-                onChange={(e) => {setWritingState({...writingState, title: e.target.value})}}/>
+                onChange={(e) => setWritingState({...writingState, title: e.target.value})}/>
         </InputBox>
         <CategoryBox>
             <h3>{writingState.category || "카테고리"}</h3>
-            <button onClick={() => {setCategoryModalState(true)}}>
+            <button onClick={() => setCategoryModalState(true)}>
                 <h3>▼</h3>
             </button>
         </CategoryBox>
         <InputBox>
             <input type="number" placeholder="가격(원)" value={writingState.price}
-                onChange={(e) => {setWritingState({...writingState, price: e.target.value})}}/>
+                onChange={(e) => setWritingState({...writingState, price: e.target.value})}/>
         </InputBox>
         <ContentBox>
             <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다." value={writingState.content}
-                onChange={(e) => {setWritingState({...writingState, content: e.target.value})}}/>
+                onChange={(e) => setWritingState({...writingState, content: e.target.value})}/>
         </ContentBox>
     </>);
 }

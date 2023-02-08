@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function TopNav({left, center, right}) {
     const navigate = useNavigate();
-    return (
+    return (<>
         <Container>
             <div>
                 {left}
@@ -15,7 +15,8 @@ export default function TopNav({left, center, right}) {
                 {right}
             </div>
         </Container>
-    );
+        <SpaceBox/>
+    </>);
 }
 
 const Container = styled.div`
@@ -24,6 +25,8 @@ const Container = styled.div`
     width: 100%;
     height: 80px;
     background-color: white;
+
+    text-align: center;
 
     display: flex;
     justify-content: space-between;
@@ -48,4 +51,9 @@ const Container = styled.div`
             padding: 0 10px;
         }
     }
+`
+
+const SpaceBox = styled.div`
+    width: 100%;
+    height: 80px;
 `

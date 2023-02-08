@@ -21,6 +21,8 @@ const Container = styled.div`
     width: 100%;
     height: 110px;
 
+    text-align: center;
+
     display: flex;
     justify-content: space-around;
     
