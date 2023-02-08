@@ -12,8 +12,7 @@ import { useNavigate } from 'react-router-dom';
 export default function WritingPage() {
     const navigate = useNavigate()
     const [categoryModalState, setCategoryModalState] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState("");
-
+    let [isMounted, setIsMounted] = useState(false);
     let [writingState, setWritingState] = useState({
         imgUrls: [],
         title: "",
@@ -21,16 +20,16 @@ export default function WritingPage() {
         price: "",
         content: "",
     });
-
-    // ONLY MOUNT
-    useEffect(() => {
-        if (localStorage.getItem('writingState'))
-            setWritingState(JSON.parse(localStorage.getItem('writingState')))
-    }, [])
     
-    const saveWritingState = function() {
+    useEffect(() => {
+        if ( !isMounted ) {
+            setIsMounted(true);
+            const localWritingState = JSON.parse(localStorage.getItem('writingState'));
+            localWritingState && setWritingState(localWritingState);
+            return;
+        }
         localStorage.setItem('writingState', JSON.stringify(writingState));
-    }
+    }, [writingState])
 
     return (<>
         <TopNav 
@@ -47,30 +46,27 @@ export default function WritingPage() {
             }/>
         { 
             categoryModalState
-            && <CategoryModal close={() => {setCategoryModalState(false)}} select={setSelectedCategory}/>
+            && <CategoryModal close={() => {setCategoryModalState(false)}} 
+                select={function(category) {setWritingState({...writingState, category})}}/>
         }
         <PhotoUpload/>
         <InputBox>
             <input type="text" placeholder="제목" value={writingState.title} 
-                onChange={(e) => {
-                    setWritingState({...writingState, title: e.target.value});
-                    setTimeout(() => {
-                        console.log(writingState);
-                        localStorage.setItem('writingState', JSON.stringify(writingState));}
-                    , 1000)}
-                }/>
+                onChange={(e) => {setWritingState({...writingState, title: e.target.value})}}/>
         </InputBox>
         <CategoryBox>
-            <h3>{selectedCategory || "카테고리"}</h3>
+            <h3>{writingState.category || "카테고리"}</h3>
             <button onClick={() => {setCategoryModalState(true)}}>
                 <h3>▼</h3>
             </button>
         </CategoryBox>
         <InputBox>
-            <input type="number" placeholder="가격(원)"/>
+            <input type="number" placeholder="가격(원)" value={writingState.price}
+                onChange={(e) => {setWritingState({...writingState, price: e.target.value})}}/>
         </InputBox>
         <ContentBox>
-            <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다."/>
+            <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다." value={writingState.content}
+                onChange={(e) => {setWritingState({...writingState, content: e.target.value})}}/>
         </ContentBox>
     </>);
 }
