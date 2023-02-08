@@ -4,11 +4,13 @@ import styled from "styled-components";
 import BottomNav from './../component/home/BottomNav';
 import { Link } from 'react-router-dom';
 import TopNav from "../component/TopNav.js";
+import { homeCategoryState } from "../RecoilStates.js";
+import { useRecoilValue } from 'recoil';
 
 export default function Home() {
     window.scrollTo(0, 0);
 
-    // TODO : RecoilValue갖고오기
+    const homeCategory = useRecoilValue(homeCategoryState);
     
     return (<>
         <TopNav left={<h2>홈</h2>}
@@ -18,7 +20,10 @@ export default function Home() {
             </Link>
         }/>
         {
-            itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
+            homeCategory ?
+                itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
+                :
+                itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx}/>)
         }
         <BottomNav/>
         <Link to="/writing">
