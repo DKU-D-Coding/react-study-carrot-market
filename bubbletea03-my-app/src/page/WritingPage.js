@@ -41,7 +41,7 @@ export default function WritingPage() {
             center={<h2>중고거래 글쓰기</h2>}
             right={
             <button>
-                <h2>완료</h2>
+                <OrangeH2>완료</OrangeH2>
             </button>
             }/>
         { 
@@ -103,4 +103,8 @@ const InputBox = styled.div`
         height: 100%;
         font-size: 20px;
     }
+`
+
+const OrangeH2 = styled.h2`
+    color: orange;
 `

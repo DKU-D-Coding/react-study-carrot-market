@@ -35,14 +35,13 @@ const Container = styled.div`
 
     div {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 50px;
-        height: 50px;
+
+        button, a, img {
+            width: 50px;
+            height: 50px;
+        }
 
         * {
-            width: 100%;
-            height: 100%;
             line-height: 50px;
             margin: 0;
         }
