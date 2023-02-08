@@ -3,9 +3,7 @@ import { useState } from 'react';
 
 
 
-export default function PhotoUpload() {
-    const [imgUrlArr, setImgUrlArr] = useState([]);
-
+export default function PhotoUpload({ imgUrlArr, setImgUrlArr }) {
     const uploadImages = function(e) {
         Object.values(e.target.files).forEach(file => {
             const reader = new FileReader();

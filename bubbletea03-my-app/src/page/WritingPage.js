@@ -14,7 +14,7 @@ export default function WritingPage() {
     const [categoryModalState, setCategoryModalState] = useState(false);
     let [isMounted, setIsMounted] = useState(false);
     let [writingState, setWritingState] = useState({
-        imgUrls: [],
+        imgUrlArr: [],
         title: "",
         category: "",
         price: "",
@@ -49,7 +49,8 @@ export default function WritingPage() {
             && <CategoryModal close={() => {setCategoryModalState(false)}} 
                 select={function(category) {setWritingState({...writingState, category})}}/>
         }
-        <PhotoUpload/>
+        <PhotoUpload imgUrlArr={writingState.imgUrlArr}
+            setImgUrlArr={function(imgUrlArr) {setWritingState({...writingState, imgUrlArr})}}/>
         <InputBox>
             <input type="text" placeholder="제목" value={writingState.title} 
                 onChange={(e) => {setWritingState({...writingState, title: e.target.value})}}/>
