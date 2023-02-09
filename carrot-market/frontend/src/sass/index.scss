@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap");
+
+@import "abstracts/mediaQueries";
+@import "base/typography";
+
+@import "base/utilities";
+@import "screen/home";
+@import "screen/product";
+
+@import "layouts/header";
+@import "layouts/homeProducts";
+@import "layouts/homeRecent";

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+
+  @include respond(phone) {
+    font-size: 30%; //1rem = 4.8px
+  }
+  @include respond(tab-port) {
+    //width<900?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(tab-land) {
+    //width<1200
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+body {
+  display: block;
+  font-family: "Gowun Dodum", sans-serif;
+  padding: 0 1rem;
+}
+main {
+  height: 91vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
