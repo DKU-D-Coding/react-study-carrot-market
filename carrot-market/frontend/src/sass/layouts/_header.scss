@@ -1,0 +1,63 @@
+.header {
+  text-align: center;
+  align-items: center;
+  font-size: 3rem;
+  height: 6vh;
+
+  width: 100%;
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding: 0 30rem;
+  font-family: "Jua", sans-serif;
+  @include respond(big-desktop) {
+    height: 9vh;
+  }
+  &__link {
+    cursor: pointer;
+  }
+  &__logo {
+    width: 14rem;
+    height: 4rem;
+  }
+  &__middle {
+    margin-left: 3rem;
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 0 2rem;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      &:hover {
+        color: rgb(151, 151, 151);
+      }
+    }
+  }
+
+  &__right {
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+    i {
+      font-size: 3.8rem;
+      cursor: pointer;
+      color: black;
+      transition: all 0.1s ease;
+      &:hover {
+        color: rgb(151, 151, 151);
+      }
+    }
+    .header__search {
+      margin-top: 1rem;
+      margin: 0 1rem;
+    }
+  }
+}

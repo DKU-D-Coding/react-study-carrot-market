@@ -1,0 +1,113 @@
+.home {
+  position: absolute;
+  width: 58%;
+  height: 100%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  input {
+    display: none;
+  }
+
+  &__title {
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 7rem;
+    font-size: 4rem;
+    line-height: 1;
+
+    font-weight: 600;
+    display: flex;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    span {
+      display: flex;
+
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__select-bar {
+    height: 3rem;
+    width: 16rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 86%;
+
+    label {
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__back-bar {
+    height: 4rem;
+    margin-left: 2%;
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    i {
+      cursor: pointer;
+
+      font-size: 3rem;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    width: 100%;
+    height: auto;
+    display: flex;
+    // flex-wrap: nowrap;
+
+    flex-wrap: wrap;
+    // overflow-x: auto;
+    // -webkit-overflow-scrolling: touch;
+    margin-top: 3rem;
+  }
+
+  &__category {
+    width: 100%;
+    padding: 2rem;
+    height: 21rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__submit {
+      margin: 3rem;
+      height: 5rem;
+      width: 17rem;
+      font-size: 2rem;
+      background-color: rgb(255, 147, 75);
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.308);
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+    button {
+      margin: 1rem;
+      height: 5rem;
+      width: 17rem;
+      font-size: 2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.521);
+      background-color: white;
+      &:hover {
+        background-color: rgb(211, 211, 211);
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+}

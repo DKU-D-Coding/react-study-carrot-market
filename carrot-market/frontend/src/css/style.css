@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap");
+/*
+$breakpoint argument choices
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  display: block;
+  font-family: "Gowun Dodum", sans-serif;
+  padding: 0 1rem; }
+
+main {
+  height: 91vh;
+  width: 100%;
+  position: relative;
+  display: flex; }
+
+.home {
+  position: absolute;
+  width: 58%;
+  height: 100%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .home input {
+    display: none; }
+  .home__title {
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 7rem;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center; }
+    .home__title span {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center; }
+  .home__select-bar {
+    height: 3rem;
+    width: 16rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 86%; }
+    .home__select-bar label {
+      cursor: pointer; }
+    .home__select-bar i {
+      font-size: 2.5rem; }
+  .home__back-bar {
+    height: 4rem;
+    margin-left: 2%;
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    margin-top: 2rem; }
+    .home__back-bar i {
+      cursor: pointer;
+      font-size: 3rem; }
+  .home__wrap {
+    display: flex;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem; }
+  .home__category {
+    width: 100%;
+    padding: 2rem;
+    height: 21rem;
+    display: flex;
+    flex-wrap: wrap; }
+    .home__category__submit {
+      margin: 3rem;
+      height: 5rem;
+      width: 17rem;
+      font-size: 2rem;
+      background-color: #ff934b;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.308);
+      border-radius: 1rem;
+      cursor: pointer; }
+    .home__category button {
+      margin: 1rem;
+      height: 5rem;
+      width: 17rem;
+      font-size: 2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.521);
+      background-color: white; }
+      .home__category button:hover {
+        background-color: lightgray;
+        color: black; }
+
+.product-screen {
+  position: absolute;
+  width: 58%;
+  height: 100%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .product-screen__wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .product-screen__wrap .product-screen__img {
+      height: 53rem;
+      width: 80rem;
+      border-radius: 2%;
+      object-position: 50% 50%; }
+    .product-screen__wrap .product-screen__user-info {
+      width: 80rem;
+      height: 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      margin-top: 2.5rem; }
+      .product-screen__wrap .product-screen__user-info i {
+        font-size: 6rem; }
+      .product-screen__wrap .product-screen__user-info__wrap {
+        display: flex;
+        align-items: center;
+        text-align: center; }
+        .product-screen__wrap .product-screen__user-info__wrap__more {
+          display: flex;
+          flex-direction: column;
+          font-size: 2rem;
+          margin-left: 1rem; }
+          .product-screen__wrap .product-screen__user-info__wrap__more span {
+            line-height: 1.3; }
+          .product-screen__wrap .product-screen__user-info__wrap__more .product-screen__username {
+            font-weight: 600; }
+          .product-screen__wrap .product-screen__user-info__wrap__more .product-screen__address {
+            color: #979797;
+            font-size: 1.5rem; }
+    .product-screen__wrap .product-screen__paragraph {
+      margin-top: 5rem;
+      width: 80rem;
+      height: 49rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem; }
+      .product-screen__wrap .product-screen__paragraph span {
+        margin: 0.5rem 0; }
+      .product-screen__wrap .product-screen__paragraph__product-name {
+        font-weight: 600;
+        font-size: 2.5rem; }
+      .product-screen__wrap .product-screen__paragraph__upload-date-category {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: #979797; }
+        .product-screen__wrap .product-screen__paragraph__upload-date-category i {
+          font-size: 0.5rem;
+          margin: 0 0.5rem; }
+      .product-screen__wrap .product-screen__paragraph__product-price {
+        font-weight: 800;
+        font-size: 2.5rem; }
+
+.header {
+  text-align: center;
+  align-items: center;
+  font-size: 3rem;
+  height: 6vh;
+  width: 100%;
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding: 0 30rem;
+  font-family: "Jua", sans-serif; }
+  @media (min-width: 112.5em) {
+    .header {
+      height: 9vh; } }
+  .header__link {
+    cursor: pointer; }
+  .header__logo {
+    width: 14rem;
+    height: 4rem; }
+  .header__middle {
+    margin-left: 3rem;
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    .header__middle a {
+      text-decoration: none;
+      color: black;
+      margin: 0 2rem;
+      cursor: pointer;
+      transition: all 0.1s ease; }
+      .header__middle a:hover {
+        color: #979797; }
+  .header__right a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer; }
+  .header__right i {
+    font-size: 3.8rem;
+    cursor: pointer;
+    color: black;
+    transition: all 0.1s ease; }
+    .header__right i:hover {
+      color: #979797; }
+  .header__right .header__search {
+    margin-top: 1rem;
+    margin: 0 1rem; }
+
+.home__products {
+  justify-content: center;
+  width: 28rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.2rem;
+  font-family: "Gowun Dodum", sans-serif;
+  margin: 0 3rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 6rem; }
+  .home__products__link {
+    width: 28rem;
+    height: 40rem;
+    text-decoration: none;
+    color: black; }
+
+.home__product__img {
+  width: 100%;
+  height: 65%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4%; }
+
+.home__product__wrap {
+  width: 100%;
+  height: 35%; }
+
+.home__product__name {
+  font-size: 2.3rem;
+  display: flex;
+  width: 100%;
+  padding: 2rem 0; }
+
+.home__product__info {
+  width: 100%;
+  display: flex;
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: space-between; }
+  .home__product__info__price {
+    font-weight: 600; }
+  .home__product__info__brand {
+    color: #8b8a8a; }
+
+.home__product__address {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.7rem;
+  color: #8b8a8a; }
+
+.home__recent {
+  position: absolute;
+  left: 0%;
+  height: 13rem;
+  width: 100%;
+  top: 123%; }
+  .home__recent__wrap {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    margin-left: 2rem;
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+  .home__recent__products {
+    flex: 0 0 auto;
+    align-items: center;
+    margin-right: 2rem;
+    justify-content: space-around;
+    height: 8rem;
+    width: 28rem;
+    display: flex; }
+
+.recent__product {
+  border-radius: 22%;
+  height: 8rem;
+  width: 9rem; }
+
+.recent__product__info {
+  display: flex;
+  flex-direction: column; }
+
+.recent__product__name {
+  font-size: 1.5rem;
+  color: #8b8a8a; }
+
+.recent__product__price {
+  font-size: 2rem !important; }
+
+.recent__product__cart {
+  border-radius: 50%;
+  background: black;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  display: flex;
+  align-items: center; }
+  .recent__product__cart i {
+    font-size: 1.5rem;
+    color: white; }
