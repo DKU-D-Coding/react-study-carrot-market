@@ -1,0 +1,22 @@
+.default_header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    border-bottom: 1px solid gray;
+    background-color: white;
+}
+
+.default_header .end{
+    padding-right: 30px;
+    color: orange;
+    cursor: pointer;
+}
+
+.default_header .title{
+    padding-bottom: 2px;
+}
