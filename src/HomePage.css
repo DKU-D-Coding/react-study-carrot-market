@@ -32,7 +32,7 @@
 }
 .mainFootContainer1 {
   width: 50px;
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,21 +40,24 @@
   font-size: 15px;
   margin-top: 5px;
   margin-right: 100px;
+  border-style: none;
+  border-radius: 40%;
 }
 .mainFootContainer2 {
-  width: 80px;
-  height: 50px;
+  width: 100px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   margin-top: 5px;
   font-size: 15px;
+  border-style: none;
+  border-radius: 40%;
 }
 .mainFootContainer1:hover,
 .mainFootContainer2:hover {
   background-color: bisque;
-  border-radius: 40%;
 }
 .plusIcon {
   position: fixed;
