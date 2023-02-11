@@ -20,9 +20,13 @@ export default function WritingPage() {
         price: "",
         content: "",
     });
-    
+
+    //TODO
+    //TODO 여기도 handleInput 만들어서 리팩토링 ㄱㄱ
+    //TODO
+
     useEffect(() => {
-        if ( !isMounted ) {
+        if (!isMounted) {
             setIsMounted(true);
             const localWritingState = JSON.parse(localStorage.getItem('writingState'));
             localWritingState && setWritingState(localWritingState);
@@ -32,28 +36,28 @@ export default function WritingPage() {
     }, [writingState])
 
     return (<>
-        <TopNav 
+        <TopNav
             left={
-                <button onClick={() => {navigate(-1)}}>
-                    <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
+                <button onClick={() => { navigate(-1) }}>
+                    <img alt="왼쪽 화살표" src="/icon/arrow.png" />
                 </button>
             }
             center={<h2>중고거래 글쓰기</h2>}
             right={
-            <button>
-                <OrangeH2>완료</OrangeH2>
-            </button>
-            }/>
-        { 
+                <button>
+                    <OrangeH2>완료</OrangeH2>
+                </button>
+            } />
+        {
             categoryModalState
-            && <CategoryModal close={() => setCategoryModalState(false)} 
-                select={(category) => setWritingState({...writingState, category})}/>
+            && <CategoryModal close={() => setCategoryModalState(false)}
+                select={(category) => setWritingState({ ...writingState, category })} />
         }
         <PhotoUpload imgUrlArr={writingState.imgUrlArr}
-            setImgUrlArr={(imgUrlArr) => setWritingState({...writingState, imgUrlArr})}/>
+            setImgUrlArr={(imgUrlArr) => setWritingState({ ...writingState, imgUrlArr })} />
         <InputBox>
-            <input type="text" placeholder="제목" value={writingState.title} 
-                onChange={(e) => setWritingState({...writingState, title: e.target.value})}/>
+            <input type="text" placeholder="제목" value={writingState.title}
+                onChange={(e) => setWritingState({ ...writingState, title: e.target.value })} />
         </InputBox>
         <CategoryBox>
             <h3>{writingState.category || "카테고리"}</h3>
@@ -63,11 +67,11 @@ export default function WritingPage() {
         </CategoryBox>
         <InputBox>
             <input type="number" placeholder="가격(원)" value={writingState.price}
-                onChange={(e) => setWritingState({...writingState, price: e.target.value})}/>
+                onChange={(e) => setWritingState({ ...writingState, price: e.target.value })} />
         </InputBox>
         <ContentBox>
             <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다." value={writingState.content}
-                onChange={(e) => setWritingState({...writingState, content: e.target.value})}/>
+                onChange={(e) => setWritingState({ ...writingState, content: e.target.value })} />
         </ContentBox>
     </>);
 }
