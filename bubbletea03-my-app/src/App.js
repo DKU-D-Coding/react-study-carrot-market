@@ -5,6 +5,7 @@ import WritingPage from './page/WritingPage';
 import CategorySelect from './page/CategorySelect';
 import RegisterPage from './page/RegisterPage';
 import { createGlobalStyle } from 'styled-components';
+import LoginPage from './page/LoginPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
 			<Route path="/writing" element={<WritingPage/>} />
 			<Route path="/select-category" element={<CategorySelect/>} />
 			<Route path="/register" element={<RegisterPage/>} />
+			<Route path="/login" element={<LoginPage/>} />
 		</Routes>
 		<GlobalStyle/>
 	</BrowserRouter>
@@ -24,7 +26,7 @@ export default function App() {
 
 const GlobalStyle = createGlobalStyle`
 	body {
-    margin: 0;
+    	margin: 0;
 	}
 
 	button {
@@ -33,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	input, textarea {
-		all: unset;
+		border: 0;
 		box-sizing: border-box;
 	}
 
