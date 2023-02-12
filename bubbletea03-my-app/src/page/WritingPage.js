@@ -21,10 +21,6 @@ export default function WritingPage() {
         content: "",
     });
 
-    //TODO
-    //TODO 여기도 handleInput 만들어서 리팩토링 ㄱㄱ
-    //TODO
-
     useEffect(() => {
         if (!isMounted) {
             setIsMounted(true);
@@ -34,6 +30,10 @@ export default function WritingPage() {
         }
         localStorage.setItem('writingState', JSON.stringify(writingState));
     }, [writingState])
+
+    const handleInput = function (e) {
+        setWritingState({ ...writingState, [e.target.name]: e.target.value })
+    }
 
     return (<>
         <TopNav
@@ -56,8 +56,8 @@ export default function WritingPage() {
         <PhotoUpload imgUrlArr={writingState.imgUrlArr}
             setImgUrlArr={(imgUrlArr) => setWritingState({ ...writingState, imgUrlArr })} />
         <InputBox>
-            <input type="text" placeholder="제목" value={writingState.title}
-                onChange={(e) => setWritingState({ ...writingState, title: e.target.value })} />
+            <input type="text" name="title" placeholder="제목"
+                value={writingState.title} onChange={handleInput} />
         </InputBox>
         <CategoryBox>
             <h3>{writingState.category || "카테고리"}</h3>
@@ -66,12 +66,12 @@ export default function WritingPage() {
             </button>
         </CategoryBox>
         <InputBox>
-            <input type="number" placeholder="가격(원)" value={writingState.price}
-                onChange={(e) => setWritingState({ ...writingState, price: e.target.value })} />
+            <input type="number" name="price" placeholder="가격(원)"
+                value={writingState.price} onChange={handleInput} />
         </InputBox>
         <ContentBox>
-            <textarea placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다." value={writingState.content}
-                onChange={(e) => setWritingState({ ...writingState, content: e.target.value })} />
+            <textarea name="content" placeholder="게시글 내용을 작성해주세요. 가짜 품목 및 판매금지품목은 게시가 제한됩니다."
+                value={writingState.content} onChange={handleInput} />
         </ContentBox>
     </>);
 }
