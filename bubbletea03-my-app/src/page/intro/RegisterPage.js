@@ -3,8 +3,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import InputLabel from '../../component/intro/InputLabel';
 import SubmitButton from '../../component/intro/SubmitButton';
+import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage() {
+
+    const navigate = useNavigate();
 
     const [warningMsg, setWarningMsg] = useState(''); // Warning 메시지
     const [inputState, setInputState] = useState({
@@ -26,7 +29,8 @@ export default function RegisterPage() {
             data: JSON.stringify(inputState)
         }) 
         .then((response) => {
-            console.log(JSON.stringify(response.data));
+            console.log(response);
+            navigate('/login');
         }) 
         .catch((error) => {
             console.log(error);

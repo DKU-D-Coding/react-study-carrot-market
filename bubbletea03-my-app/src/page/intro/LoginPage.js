@@ -3,17 +3,24 @@ import { useState } from 'react';
 import axios from 'axios';
 import InputLabel from '../../component/intro/InputLabel';
 import SubmitButton from '../../component/intro/SubmitButton';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
 
 
 // TODO: RegisterPage와 LoginPage가 거의 겹친다. 더 통합할 수 없을까?
 
 export default function LoginPage() {
 
+    const navigate = useNavigate();
+
     const [warningMsg, setWarningMsg] = useState('');
     const [inputState, setInputState] = useState({
         email: '',
         pw: '',
     });
+
+
+    const [cookies, setCookie] = useCookies(['nickName', 'accessToken', 'refreshToken']);
 
     const handleSubmit = function(e) {
         e.preventDefault();
@@ -26,7 +33,13 @@ export default function LoginPage() {
             data: JSON.stringify(inputState)
         }) 
         .then((response) => {
-            console.log(JSON.stringify(response.data));
+            console.log(response);
+            const result = response.data.data;
+            const options = { path: '/', httpOnly: true };
+            setCookie('nickName', result.nickName, options);
+            setCookie('accessToken', result.accessToken, options);
+            setCookie('refreshToken', result.refreshToken, options);
+            navigate('/');
         }) 
         .catch((error) => {
             console.log(error);
