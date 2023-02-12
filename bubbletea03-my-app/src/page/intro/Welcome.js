@@ -28,6 +28,7 @@ export default function Welcome() {
 
 const WelcomeContainer = styled.div`
     text-align: center;
+    margin: 30% 0;
     
     img {
         width: 180px;

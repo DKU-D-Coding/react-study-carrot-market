@@ -51,6 +51,8 @@ export default function LoginPage() {
 
             <InputLabel type="password" name="pw" text="비밀번호(PW)"
                 value={inputState.pw} onChange={handleInput}/>
+
+            <SpaceBox/>
             
             <SubmitButton value="로그인" warning={warningMsg}/>
         </form>
@@ -62,4 +64,8 @@ const H2 = styled.h2`
     p {
         margin: 0;
     }
+`
+
+const SpaceBox = styled.div`
+    height: 30vh;
 `

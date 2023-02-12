@@ -19,7 +19,7 @@ const BOX_CSS = css`
     line-height: 50px;
     font-size: x-large;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 5vh;
     text-align: center;
     color: white;
 `

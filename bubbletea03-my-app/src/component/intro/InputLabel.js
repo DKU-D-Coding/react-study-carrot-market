@@ -11,7 +11,7 @@ export default function InputLabel({text, name, value, onChange, type = "text"})
 
 const Label = styled.label`
     display: block;
-    margin: 40px 0;
+    margin: 5vh 0;
     
     p {
         margin: 0;
