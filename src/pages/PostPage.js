@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
-import { useState } from 'react';
-import ModalBasic from './ModalBasic';
-import './PostPage.css';
+import { React, useState } from 'react';
+import ModalBasic from '../components/ModalBasic';
+import '../style/PostPage.css';
 import { Link } from 'react-router-dom';
 // import { eventWrapper } from '@testing-library/user-event/dist/utils';
 
@@ -32,6 +31,9 @@ function PostPage() {
 
   // 모달창 노출 여부 state
   const [modalOpen, setModalOpen] = useState(false);
+  console.log(localStorage.getItem('price'));
+  console.log(localStorage.getItem('content'));
+  console.log(localStorage.getItem('title'));
 
   const openModal = e => {
     e.preventDefault();
@@ -41,12 +43,17 @@ function PostPage() {
     e.preventDefault();
     setModalOpen(false);
   };
-  const [formValue, setFormValue] = useState({ title: '' }, { price: '' }, { content: '' });
+  const [formValue, setFormValue] = useState({
+    title: localStorage.getItem('title'),
+    price: localStorage.getItem('price'),
+    content: localStorage.getItem('content'),
+  });
 
   const handleChange = e => {
+    localStorage.setItem(e.target.name, e.target.value);
     setFormValue({
       ...formValue,
-      [e.target.name]: e.target.value,
+      [e.target.name]: localStorage.getItem(e.target.name),
     });
   };
   const handleSubmit = e => {

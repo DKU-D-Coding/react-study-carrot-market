@@ -1,4 +1,4 @@
-import './ModalBasic.css';
+import '../style/ModalBasic.css';
 import React from 'react';
 const ModalBasic = props => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴

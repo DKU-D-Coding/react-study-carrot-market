@@ -1,25 +1,41 @@
-import React from 'react';
+import { useState, useEffect, React } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { getItemBySlug } from './api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faHouse, faLeftLong, faHeart } from '@fortawesome/free-solid-svg-icons';
-import './ProductPage.css';
-import UserProduct from './UserProduct';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Carousel from './util/Carousel';
-
+import '../style/ProductPage.css';
+import UserProduct from '../components/UserProduct';
+import Carousel from '../components/Carousel';
+import { useRecoilValue } from 'recoil';
+import { getItemListState } from '../recoil/selector';
 function ProductPage() {
+  const itemList = useRecoilValue(getItemListState);
   const { itemSlug } = useParams();
   const [itemObject, setItemObject] = useState({});
-  const getListFromApi = async itemSlug => {
-    const item = await getItemBySlug(itemSlug);
-    setItemObject({ ...itemObject, ...item });
+  const [isMounted, setIsMounted] = useState(false);
+  const itemBySlug = itemSlug => {
+    return itemList.find(item => item.slug === itemSlug);
   };
+
   useEffect(() => {
-    getListFromApi(itemSlug);
-  }, []);
+    setIsMounted(true);
+
+    if (isMounted) {
+      setItemObject({ ...itemObject, ...itemBySlug(itemSlug) });
+    }
+    console.log(itemObject.nickName);
+    return () => {
+      setIsMounted(false);
+    };
+  }, [isMounted, itemSlug]);
+
+  // const getListFromApi = async itemSlug => {
+  //   const item = await getItemBySlug(itemSlug);
+  //   setItemObject({ ...itemObject, ...item });
+  // };
+  // useEffect(() => {
+  //   getListFromApi(itemSlug);
+  // }, []);
   return (
     <>
       <div className='productPageContainer'>
