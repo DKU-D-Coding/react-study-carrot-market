@@ -1,6 +1,7 @@
 import SubmitButton from "../../component/intro/SubmitButton";
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 export default function Welcome() {
 
@@ -17,6 +18,11 @@ export default function Welcome() {
         <form onSubmit={() => {navigate('/register')}}>
             <SubmitButton value="시작하기"/>
         </form>
+
+        <P>
+            이미 계정이 있나요? 
+            <Link to='/login'>로그인</Link>
+        </P>
     </>);
 }
 
@@ -30,5 +36,14 @@ const WelcomeContainer = styled.div`
 
     h2, p {
         margin: 5px;
+    }
+`
+
+const P = styled.p`
+    text-align: center;
+
+    a {
+        margin-left: 5px;
+        color: orange;
     }
 `
