@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useRecoilState, useSetRecoilState } from "recoil"
 import styled from "styled-components"
-import { selectCategoryAtom } from "../atom"
+import { selectCategoryAtom } from "../State/atom"
 import TopBar from "../Components/Bar/TopBar"
 import categoryList from "../data/categoryList"
 
@@ -10,7 +10,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 200px);
+    height: 100vh;
 `
 const CategoryList = styled.ul`
     height: 450px;

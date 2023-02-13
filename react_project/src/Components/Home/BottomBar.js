@@ -5,9 +5,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { selectCategoryAtom } from "../../atom";
-
+import { useRecoilState, useRecoilValue } from "recoil";
+import { selectCategoryAtom } from "../../State/atom";
+import { createGlobalStyle } from "styled-components";
 
 const Bar = styled.div`
     display: flex;
@@ -26,25 +26,34 @@ const Bar = styled.div`
         font-size: 14px;
     }
 `
+const GlobalStyle = createGlobalStyle`
+    body {
+        padding: 100px 0;
+    }
+`
 
 function BottomBar(){
     const [categoryFilter, setCategoyFilter] = useRecoilState(selectCategoryAtom);
     const homeClick = () => {
         setCategoyFilter("")
     }
+
     return(
-        <Bar>
-            <div>
-                <Link to="/">
-                    <FontAwesomeIcon icon={faHome} onClick={homeClick} />
-                    <p>홈</p>
+        <>
+            <Bar>
+                <div>
+                    <Link to="/">
+                        <FontAwesomeIcon icon={faHome} onClick={homeClick} />
+                        <p>홈</p>
+                    </Link>
+                </div>
+                <Link to='/mypage'>
+                    <FontAwesomeIcon icon={faUser} />
+                    <p>나의 당근</p>
                 </Link>
-            </div>
-            <div>
-                <FontAwesomeIcon icon={faUser} />
-                <p>나의 당근</p>
-            </div>
-        </Bar>
+            </Bar>
+            <GlobalStyle/>
+        </>
     )
 }
 

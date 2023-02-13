@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { selectCategoryAtom } from "../../atom";
+import { selectCategoryAtom } from "../../State/atom";
 
 const Bar = styled.div`
     display: flex;
@@ -78,7 +78,7 @@ function TopBar(props){
                 </CompleteBtn> : ""
             }            
             {(props.menuBtn)?
-                <Link to="category">
+                <Link to="/category">
                     <FontAwesomeIcon icon={faBars}/>
                 </Link>
                 :""
