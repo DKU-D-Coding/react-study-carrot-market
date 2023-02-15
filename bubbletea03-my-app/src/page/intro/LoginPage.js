@@ -36,10 +36,11 @@ export default function LoginPage() {
                 console.log(response);
                 const result = response.data.data;
                 const options = { path: '/' };
+                setCookie('userId', result.userId, options);
                 setCookie('nickName', result.nickName, options);
                 setCookie('accessToken', result.accessToken, options);
                 setCookie('refreshToken', result.refreshToken, options);
-                console.log(cookies.accessToken); //! httpOnly: true를 시도해 봤는데, 쿠키에 접근이 불가능하네요!
+                console.log(cookies.accessToken);
                 navigate('/');
             })
             .catch((error) => {

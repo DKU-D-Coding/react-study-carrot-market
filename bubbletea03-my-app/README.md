@@ -30,3 +30,4 @@
 
 ### 4주차
 - [npm react-cookie](https://www.npmjs.com/package/react-cookie)
+- [favicon.ico 오류 404 메시지 해결 방법](https://cheonfamily.tistory.com/7)

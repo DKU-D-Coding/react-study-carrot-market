@@ -2,7 +2,7 @@ import ItemCard from "../component/ItemCard.js";
 import itemData from "../data/ItemData.js";
 import styled from "styled-components";
 import BottomNav from './../component/home/BottomNav';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import TopNav from "../component/TopNav.js";
 import { homeCategoryState } from "../RecoilStates.js";
 import { useRecoilValue } from 'recoil';
@@ -15,13 +15,13 @@ export default function Home() {
 
     const homeCategory = useRecoilValue(homeCategoryState);
 
+    const navigate = useNavigate();
     const [cookies] = useCookies(['accessToken']);
 
     useEffect(() => {
         axios({
             method: 'get',
             url: 'api/like/user',
-            // withCredentials: true,
             headers: {
                 'Authorization': 'Bearer ' + cookies.accessToken,
             },
@@ -31,6 +31,9 @@ export default function Home() {
             })
             .catch((error) => {
                 console.log(error);
+                if (error.response.data.code === "INVALID_TOKEN") {
+                    navigate('/welcome');
+                }
             });
     }, [])
 
