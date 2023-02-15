@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 
 export default function ItemCard({ item, mode }) {
     return (
-        <Link to={`/product-page/${item.id}`}>
+        <Link to={`/product-page/${item.itemId}`}>
             <Container mode={mode}>
-                <img alt="물건 사진" src={item.imgSrc}/>
+                <img alt="물건 사진" src={item.url} />
                 <div>
                     <h3>{item.title}</h3>
                     <h5>{item.price}</h5>
@@ -19,8 +19,8 @@ const Container = styled.div`
     display: flex;
     h3, h5 { margin: 0; }
 
-    ${function({ mode }) {
-        switch(mode) {
+    ${function ({ mode }) {
+        switch (mode) {
             case "home":
                 return css`
                     margin: 20px;

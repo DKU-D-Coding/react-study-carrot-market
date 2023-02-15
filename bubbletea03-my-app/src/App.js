@@ -7,23 +7,25 @@ import RegisterPage from './page/intro/RegisterPage';
 import { createGlobalStyle } from 'styled-components';
 import LoginPage from './page/intro/LoginPage';
 import Welcome from './page/intro/Welcome';
+import DataManager from './DataManager';
 
 export default function App() {
-  return (
-	<BrowserRouter>
-		<Routes>
-			<Route path="*" element={<div> Not Found </div>} />
-			<Route path="/" element={<Home/>} />
-			<Route path="/product-page/:itemId" element={<ProductPage/>} />
-			<Route path="/writing" element={<WritingPage/>} />
-			<Route path="/select-category" element={<CategorySelect/>} />
-			<Route path="/register" element={<RegisterPage/>} />
-			<Route path="/login" element={<LoginPage/>} />
-			<Route path="/welcome" element={<Welcome/>} />
-		</Routes>
-		<GlobalStyle/>
-	</BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="*" element={<div> Not Found </div>} />
+				<Route path="/" element={<Home />} />
+				<Route path="/product-page/:itemId" element={<ProductPage />} />
+				<Route path="/writing" element={<WritingPage />} />
+				<Route path="/select-category" element={<CategorySelect />} />
+				<Route path="/register" element={<RegisterPage />} />
+				<Route path="/login" element={<LoginPage />} />
+				<Route path="/welcome" element={<Welcome />} />
+			</Routes>
+			<GlobalStyle />
+			<DataManager />
+		</BrowserRouter>
+	);
 }
 
 const GlobalStyle = createGlobalStyle`

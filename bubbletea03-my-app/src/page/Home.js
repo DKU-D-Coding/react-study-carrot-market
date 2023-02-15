@@ -1,41 +1,17 @@
 import ItemCard from "../component/ItemCard.js";
-import itemData from "../data/ItemData.js";
 import styled from "styled-components";
 import BottomNav from './../component/home/BottomNav';
 import { Link, useNavigate } from 'react-router-dom';
 import TopNav from "../component/TopNav.js";
 import { homeCategoryState } from "../RecoilStates.js";
 import { useRecoilValue } from 'recoil';
-import { useEffect } from "react";
-import axios from "axios";
-import { useCookies } from 'react-cookie';
+import { itemData } from './../RecoilStates';
 
 export default function Home() {
     window.scrollTo(0, 0);
 
     const homeCategory = useRecoilValue(homeCategoryState);
-
-    const navigate = useNavigate();
-    const [cookies] = useCookies(['accessToken']);
-
-    useEffect(() => {
-        axios({
-            method: 'get',
-            url: 'api/like/user',
-            headers: {
-                'Authorization': 'Bearer ' + cookies.accessToken,
-            },
-        })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-                if (error.response.data.code === "INVALID_TOKEN") {
-                    navigate('/welcome');
-                }
-            });
-    }, [])
+    const items = useRecoilValue(itemData)
 
     return (<>
         <TopNav left={<h2>홈</h2>}
@@ -46,10 +22,11 @@ export default function Home() {
             } />
         카테고리: {homeCategory || "전체"}
         {
-            homeCategory ?
-                itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
-                :
-                itemData.map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
+            // ! 백엔드 측에서 category를 제공하지 않고 있음.
+            // homeCategory ?
+            //     itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
+            //     :
+            items.map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
         }
         <BottomNav />
         <Link to="/writing">
