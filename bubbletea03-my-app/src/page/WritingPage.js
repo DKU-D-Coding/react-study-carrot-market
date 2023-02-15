@@ -54,8 +54,8 @@ export default function WritingPage() {
         console.log(Array.from(formData.values()));
         console.log(Array.from(formData));
 
-        // 글쓰기 API 연결... 작동 X. BAD REQUEST 뜸
-        axios.post('http://cors-anywhere.herokuapp.com/http://103.218.158.186/api/item', formData, {
+        //! 글쓰기 API 연결 작동 X. BAD REQUEST 뜸
+        axios.post('/api/item', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': 'Bearer ' + cookies.accessToken

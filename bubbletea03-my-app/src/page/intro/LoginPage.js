@@ -26,7 +26,7 @@ export default function LoginPage() {
         e.preventDefault();
         axios({
             method: 'post',
-            url: 'http://103.218.158.186/api/user/login',
+            url: '/api/user/login',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -35,10 +35,11 @@ export default function LoginPage() {
             .then((response) => {
                 console.log(response);
                 const result = response.data.data;
-                const options = { path: '/', };
+                const options = { path: '/' };
                 setCookie('nickName', result.nickName, options);
                 setCookie('accessToken', result.accessToken, options);
                 setCookie('refreshToken', result.refreshToken, options);
+                console.log(cookies.accessToken); //! httpOnly: true를 시도해 봤는데, 쿠키에 접근이 불가능하네요!
                 navigate('/');
             })
             .catch((error) => {

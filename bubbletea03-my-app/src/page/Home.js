@@ -20,7 +20,7 @@ export default function Home() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'http://cors-anywhere.herokuapp.com/http://103.218.158.186/api/like/user',
+            url: 'api/like/user',
             // withCredentials: true,
             headers: {
                 'Authorization': 'Bearer ' + cookies.accessToken,
