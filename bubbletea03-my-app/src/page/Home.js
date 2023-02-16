@@ -11,7 +11,7 @@ export default function Home() {
     window.scrollTo(0, 0);
 
     const homeCategory = useRecoilValue(homeCategoryState);
-    const items = useRecoilValue(itemData)
+    const items = useRecoilValue(itemData);
 
     return (<>
         <TopNav left={<h2>홈</h2>}
@@ -26,7 +26,7 @@ export default function Home() {
             // homeCategory ?
             //     itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
             //     :
-            items.map((item, idx) => <ItemCard item={item} mode="home" key={item} />)
+            items.map((item) => <ItemCard item={item} mode="home" key={item.itemId} />)
         }
         <BottomNav />
         <Link to="/writing">

@@ -5,28 +5,29 @@ import styled from 'styled-components';
 import { useSetRecoilState } from "recoil";
 import { homeCategoryState } from "../RecoilStates";
 import { Link } from "react-router-dom";
+import shortid from "shortid";
 
 
 
-export default function CategorySelect() {    
+export default function CategorySelect() {
     const navigate = useNavigate();
     const setCategory = useSetRecoilState(homeCategoryState);
 
     return (<>
         <TopNav left={
-            <button onClick={() => {navigate(-1)}}>
-                <img alt="왼쪽 화살표" src="/icon/arrow.png"/>
+            <button onClick={() => { navigate(-1) }}>
+                <img alt="왼쪽 화살표" src="/icon/arrow.png" />
             </button>
-            } 
-            center = {
+        }
+            center={
                 <h2>중고거래 카테고리</h2>
-            }/>
+            } />
         <CategoryContainer>
             {
-                CATEGORY_LIST.map((category, idx) => 
-                    <button key={idx} onClick={() => {
+                CATEGORY_LIST.map((category, idx) =>
+                    <button key={shortid.generate()} onClick={() => {
                         setCategory(category);
-                        navigate('/');    
+                        navigate('/');
                     }}>
                         {category}
                     </button>

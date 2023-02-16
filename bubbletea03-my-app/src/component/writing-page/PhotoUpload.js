@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
-
+import shortid from 'shortid';
 
 
 export default function PhotoUpload({ files, setFiles }) {
@@ -26,7 +25,7 @@ export default function PhotoUpload({ files, setFiles }) {
             </Label>
             {
                 files.map((url, idx) =>
-                    <div key={idx}>
+                    <div key={shortid.generate()}>
                         <Img alt="업로드한 이미지" src={url} />
                         <DeleteBtn onClick={() => { deleteImg(idx) }}>
                             <img alt="닫기 버튼" src="/icon/close.png" />
