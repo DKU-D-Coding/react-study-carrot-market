@@ -6,36 +6,30 @@ import { faCircleUser, faHouse, faLeftLong, faHeart } from '@fortawesome/free-so
 import '../style/ProductPage.css';
 import UserProduct from '../components/UserProduct';
 import Carousel from '../components/Carousel';
-import { useRecoilValue } from 'recoil';
-import { getItemListState } from '../recoil/selector';
+import axios from 'axios';
 function ProductPage() {
-  const itemList = useRecoilValue(getItemListState);
   const { itemSlug } = useParams();
+  // const location = useLocation();
+  const [itemList, setItemList] = useState([]);
   const [itemObject, setItemObject] = useState({});
-  const [isMounted, setIsMounted] = useState(false);
-  const itemBySlug = itemSlug => {
-    return itemList.find(item => item.slug === itemSlug);
+  const [userItemList, setUserItemList] = useState([]);
+
+  const getItemBySlug = async itemSlug => {
+    const res = await axios.get('http://localhost:3001/items');
+    const resList = res.data;
+    setItemList(resList);
+    const slugItem = resList.find(item => item.slug === itemSlug);
+    const userProductList = resList.filter(item => item.nickName === slugItem.nickName);
+    setUserItemList(userProductList);
+    setItemObject(slugItem);
   };
-
   useEffect(() => {
-    setIsMounted(true);
-
-    if (isMounted) {
-      setItemObject({ ...itemObject, ...itemBySlug(itemSlug) });
-    }
-    console.log(itemObject.nickName);
-    return () => {
-      setIsMounted(false);
-    };
-  }, [isMounted, itemSlug]);
-
-  // const getListFromApi = async itemSlug => {
-  //   const item = await getItemBySlug(itemSlug);
-  //   setItemObject({ ...itemObject, ...item });
-  // };
-  // useEffect(() => {
-  //   getListFromApi(itemSlug);
-  // }, []);
+    getItemBySlug(itemSlug);
+  }, [itemSlug]);
+  useEffect(() => {
+    // code that depends on itemList state
+    console.log(itemList);
+  }, [itemList]);
   return (
     <>
       <div className='productPageContainer'>
@@ -48,11 +42,6 @@ function ProductPage() {
           </Link>
         </div>
 
-        {/* <div className='imageLayer'>
-        <div className='imageContainer'>
-          <img src={itemObject.imageUrl[0]} alt={itemObject.title} className='productImage'></img>
-        </div>
-      </div> */}
         <Carousel imageList={itemObject.imageUrl}></Carousel>
         <div className='userLayer'>
           <div className='userContainer'>
@@ -71,7 +60,9 @@ function ProductPage() {
           </div>
 
           <div>
-            <UserProduct nickName={itemObject.nickName}></UserProduct>
+            {userItemList.map(item => {
+              return <UserProduct key={item.id} userItem={item}></UserProduct>;
+            })}
           </div>
         </div>
         <div className='footLayer'>

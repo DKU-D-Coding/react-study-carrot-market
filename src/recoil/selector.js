@@ -1,27 +1,30 @@
-import { selector, selectorFamily, useRecoilValue } from 'recoil';
-import axios from 'axios';
-import { itemListFilterState, itemListState } from './atom';
+import { selector } from 'recoil';
+import { itemListState, itemListFilterState } from './atom';
 export const getItemListState = selector({
   key: 'getItemListState',
-  get: async ({ get }) => {
-    const response = await axios.get('http://localhost:3001/items');
-    const itemList = response.data;
+  get: ({ get }) => {
+    const itemList = get(itemListState);
     const filter = get(itemListFilterState);
     console.log(itemList);
-    console.log(filter);
     return itemList;
+    // if (filter === 'Show All') {
+    //   return itemList;
+    // } else if (filter) {
+    //   return itemList.filter(item => item.category === filter);
+    // } else {
+    //   return undefined;
+    // }
+
     // switch (filter) {
     //   case filter:
     //     return itemList.filter(item => item.category === filter);
-    //   case 'show All':
+    //   case 'Show All':
     //     return itemList;
     //   default:
-    //     return undefined;
+    //     return itemList;
     // }
   },
-  set: ({ set }, newValue) => {
-    set(itemListState, newValue);
-  },
+  set: ({ set }, newValue) => set(itemListState, newValue),
 });
 
 // export const filteredCategoryListState = selector({
