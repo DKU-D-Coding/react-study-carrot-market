@@ -5,6 +5,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { selectCategoryAtom } from "../../atom";
 
 
 const Bar = styled.div`
@@ -26,12 +28,16 @@ const Bar = styled.div`
 `
 
 function BottomBar(){
+    const [categoryFilter, setCategoyFilter] = useRecoilState(selectCategoryAtom);
+    const homeClick = () => {
+        setCategoyFilter("")
+    }
     return(
         <Bar>
             <div>
                 <Link to="/">
-                <FontAwesomeIcon icon={faHome} />
-                <p>홈</p>
+                    <FontAwesomeIcon icon={faHome} onClick={homeClick} />
+                    <p>홈</p>
                 </Link>
             </div>
             <div>
