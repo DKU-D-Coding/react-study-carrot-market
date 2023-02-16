@@ -26,7 +26,7 @@ export default function Home() {
             // homeCategory ?
             //     itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
             //     :
-            items.map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
+            items.map((item, idx) => <ItemCard item={item} mode="home" key={item} />)
         }
         <BottomNav />
         <Link to="/writing">

@@ -12,9 +12,13 @@ export default function DataManager() {
     const setItemData = useSetRecoilState(itemData);
 
     useEffect(() => {
+        loadItemData();
+    }, []);
+
+    const loadItemData = function () {
         axios({
             method: 'get',
-            url: 'api/item',
+            url: '/api/item',
             headers: {
                 'Authorization': 'Bearer ' + cookies.accessToken,
             },
@@ -30,6 +34,5 @@ export default function DataManager() {
                     navigate('/welcome');
                 }
             });
-    }, [])
-
+    }
 }
