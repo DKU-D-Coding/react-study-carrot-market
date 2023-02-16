@@ -3,21 +3,29 @@ import styled from "styled-components";
 const Card = styled.div`
     img {
         margin-bottom: 10px;
+        width: 100%;
     }
     p {
         padding-left: 20px;
+        margin: 0;
+    }
+    ul {
+        margin: 0;
+        padding: 0!important;
     }
 `
 
 function UserCard({ goodsId, imgSrc, title, price }){
     return(
-        <Link to={'/product/' + goodsId}>
-            <Card className="card">
-                <img src={imgSrc}/>
-                <p>{title}</p>
-                <p>{price}</p>
-            </Card>
-        </Link>
+        <li>
+            <Link to={'/product/' + goodsId}>
+                <Card>
+                    <img src={imgSrc}/>
+                    <p>{title}</p>
+                    <p>{price}</p>
+                </Card>
+            </Link>
+        </li>
     )
 }
 

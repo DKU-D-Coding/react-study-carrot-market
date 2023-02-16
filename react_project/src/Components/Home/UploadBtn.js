@@ -1,5 +1,6 @@
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 const Button = styled.div`
@@ -13,12 +14,14 @@ const Button = styled.div`
     z-index: 9999;
 `
 
-function AddBtn(){
+function UploadBtn(){
     return(
-        <Button>
-            <FontAwesomeIcon icon={faPlusCircle}></FontAwesomeIcon>
-        </Button>
+        <Link to="/upload">
+            <Button>
+                <FontAwesomeIcon icon={faPlusCircle}></FontAwesomeIcon>
+            </Button>
+        </Link>
     )
 }
 
-export default AddBtn;
+export default UploadBtn;
