@@ -4,35 +4,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { getItemListState } from '../recoil/selector';
+import axios from 'axios';
 import { itemListFilterState } from '../recoil/atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { LoginState } from '../recoil/atom';
 function HomePage() {
-  const [isMounted, setIsMounted] = useState(false);
   const category = useRecoilValue(itemListFilterState);
-  console.log(category);
-  const [itemList, setItemList] = useRecoilState(getItemListState);
-
-  console.log(itemList);
+  const [itemList, setItemList] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
   useEffect(() => {
-    if (isMounted) {
-      setItemList(itemList);
+    async function getItemAxios() {
+      const res = await axios.get('http://localhost:3001/items');
+      setItemList(res.data);
     }
-    return () => {
-      setIsMounted(false);
-    };
+    getItemAxios();
   }, []);
-
+  const logoutHandler = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('nickName');
+    setIsLoggedIn(false);
+  };
   return (
     <div>
       <header className='mainNav'>
         <p className='mainHeaderP'>홈</p>
-        <Link to='/signup'>
+        <p>현재 카테고리: {category}</p>
+        <Link to='/boforelogin'>
+          <p>처음이라면</p>
+        </Link>
+        <Link to='/boforelogin/signup'>
           <p>회원가입</p>
         </Link>
-        <Link to='/signin'>
-          <p>로그인</p>
-        </Link>
+        {isLoggedIn ? (
+          <button onClick={() => logoutHandler()}>로그아웃</button>
+        ) : (
+          <Link to='/boforelogin/signin'>
+            <p>로그인</p>
+          </Link>
+        )}
         <Link to='/category'>
           <FontAwesomeIcon icon={faBars} className='barIcon' />
         </Link>
