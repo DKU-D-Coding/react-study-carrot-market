@@ -18,7 +18,7 @@ function ProductCard({ itemList }) {
 function ProductItem({ item }) {
   return (
     <div className='itemContainer'>
-      <img src={item.imageUrl[0]} alt={item.title} className='itemImage'></img>
+      <img src={item.imageUrl[0].url} alt={item.title} className='itemImage'></img>
       <div className='itemDetail'>
         <Link to={`/${item.slug}`}>
           <p>상품명: {item.title}</p>

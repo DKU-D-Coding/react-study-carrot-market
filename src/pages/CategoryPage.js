@@ -21,7 +21,7 @@ function CategoryPage() {
           모두 보기
         </button>
         <button value='디지털기기' onClick={updateFilter}>
-          디지털기기
+          디지털 기기
         </button>
         <button value='생활가전' onClick={updateFilter}>
           생활가전

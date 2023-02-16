@@ -64,8 +64,8 @@ function Carousel({ imageList = [] }) {
     <Container>
       {currentSlide}
       <SliderContainer ref={slideRef}>
-        {imageList.map((src, index) => (
-          <Slide key={index} img={src} />
+        {imageList.map(item => (
+          <Slide key={item.id} img={item.url} />
         ))}
       </SliderContainer>
       <ButtonContainer>
@@ -75,7 +75,7 @@ function Carousel({ imageList = [] }) {
     </Container>
   );
 }
-function Slide({ img, key }) {
-  return <IMG src={img} alt={key} />;
+function Slide({ img }) {
+  return <IMG src={img} alt={'image'} />;
 }
 export default Carousel;
