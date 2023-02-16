@@ -1,19 +1,45 @@
 import ItemCard from '../ItemCard.js'
+import itemData from '../../data/ItemData.js';
+import styled from 'styled-components';
 
-function UserItemList() {
+export default function UserItemList({ userName }) {
+    const userItems = itemData.filter(item => item.sellerName == userName);
+
     return (
-        <div>
-            <div style={{display:"flex", justifyContent:"space-between", paddingTop:"20px"}}>
-                <div style={{marginLeft:"20px"}}>닉네임님의 판매 상품</div>
-                <div style={{marginRight:"20px",color:"gray"}}>모두보기</div>
-            </div>
-            <div className="item-list">
+        <>
+            <HeaderBox>
+                <div>{userName}님의 판매 상품</div>
+                <button>모두보기</button>
+            </HeaderBox>
+            <ItemListBox>
                 {
-                [1, 2, 3, 4].map(() => <ItemCard/>)
+                    userItems.slice(0, 3).map((item, idx) => <ItemCard item={item} mode="item-list" key={idx}/>)
+                    // 4개만 표시한다.
                 }
-            </div>
-        </div>
+            </ItemListBox>
+        </>
     );
 }
 
-export default UserItemList;
+const HeaderBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    div {
+        margin-left: 20px;
+    }
+    
+    button {
+        margin-right: 20px;
+        color: gray;
+    }
+`
+
+
+const ItemListBox = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 25px;
+`
