@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { css } from 'styled-components';
 
-export default function SubmitButton({value, warning}) {
+interface IProps {
+    value : string;
+    warning?: string;
+}
+
+export default function SubmitButton({value, warning}: IProps) {
     return (<>
         {
             warning ?

@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
 
-export default function TopNav({left, center, right}) {
-    const navigate = useNavigate();
+interface IProps {
+    left?: JSX.Element;
+    center?: JSX.Element;
+    right?: JSX.Element;
+}
+
+export default function TopNav({left, center, right}: IProps) {
     return (<>
         <Container>
             <div>

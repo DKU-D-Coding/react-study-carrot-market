@@ -20,7 +20,7 @@ export default function LoginPage() {
     });
 
 
-    const [cookies, setCookie] = useCookies(['nickName', 'accessToken', 'refreshToken']);
+    const [cookies, setCookie] = useCookies(['userId', 'nickName', 'accessToken', 'refreshToken']);
 
     const handleSubmit = function (e) {
         e.preventDefault();

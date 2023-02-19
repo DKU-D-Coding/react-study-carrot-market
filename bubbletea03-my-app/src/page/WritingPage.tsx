@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CategoryModal from '../component/writing-page/CategoryModal';
 import PhotoUpload from '../component/writing-page/PhotoUpload';
 import { useEffect } from 'react';
-import TopNav from './../component/TopNav';
+import TopNav from '../component/TopNav';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
@@ -43,11 +43,7 @@ export default function WritingPage() {
     const handleSubmit = function (e) {
         const formData = new FormData();
         for (const [key, value] of Object.entries(writingState)) {
-            if (key === 'files') {
-                value.forEach((file) => formData.append('files', file));
-                continue;
-            }
-            formData.append(key, value);
+            formData.append(key, value as string);
         }
 
         console.log(Array.from(formData.keys()));

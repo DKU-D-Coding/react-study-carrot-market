@@ -1,11 +1,11 @@
-import ItemCard from "../component/ItemCard.js";
+import ItemCard from "../component/ItemCard";
 import styled from "styled-components";
-import BottomNav from './../component/home/BottomNav';
+import BottomNav from '../component/home/BottomNav';
 import { Link, useNavigate } from 'react-router-dom';
-import TopNav from "../component/TopNav.js";
-import { homeCategoryState } from "../RecoilStates.js";
+import TopNav from "../component/TopNav";
+import { homeCategoryState } from "../RecoilStates";
 import { useRecoilValue } from 'recoil';
-import { itemData } from './../RecoilStates';
+import { itemData } from '../RecoilStates';
 
 export default function Home() {
     window.scrollTo(0, 0);
