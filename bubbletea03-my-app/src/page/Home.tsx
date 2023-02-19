@@ -1,7 +1,7 @@
 import ItemCard from "../component/ItemCard";
 import styled from "styled-components";
 import BottomNav from '../component/home/BottomNav';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TopNav from "../component/TopNav";
 import { homeCategoryState } from "../RecoilStates";
 import { useRecoilValue } from 'recoil';

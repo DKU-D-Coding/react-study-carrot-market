@@ -15,7 +15,7 @@ export default function ItemCard({ item, mode }) {
     );
 }
 
-const Container = styled.div`
+const Container = styled.div<{mode: string}>`
     display: flex;
     h3, h5 { margin: 0; }
 

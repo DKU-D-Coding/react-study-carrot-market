@@ -43,5 +43,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://103.218.158.186"
+  "proxy": "http://103.218.158.186",
+  "devDependencies": {
+    "@types/shortid": "^0.0.29",
+    "@types/styled-components": "^5.1.26"
+  }
 }

@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-      "allowJs": true,
       "target": "ES5",
       "outDir": "./dist",
       "moduleResolution": "Node",

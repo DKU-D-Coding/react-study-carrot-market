@@ -4,8 +4,7 @@ import { CATEGORY_LIST } from "../data/Consts";
 import styled from 'styled-components';
 import { useSetRecoilState } from "recoil";
 import { homeCategoryState } from "../RecoilStates";
-import { Link } from "react-router-dom";
-import shortid from "shortid";
+import * as shortid from "shortid";
 
 
 

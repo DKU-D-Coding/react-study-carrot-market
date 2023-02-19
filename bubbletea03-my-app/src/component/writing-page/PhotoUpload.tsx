@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import shortid from 'shortid';
+import * as shortid from 'shortid';
 
 
 export default function PhotoUpload({ files, setFiles }) {
-    const uploadImages = function (e) {
+    const uploadImages = function (e : React.ChangeEvent<HTMLInputElement>) {
         Object.values(e.target.files).forEach(file => {
             const reader = new FileReader();
             reader.readAsDataURL(file);

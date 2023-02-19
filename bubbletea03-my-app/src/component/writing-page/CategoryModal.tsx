@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { CATEGORY_LIST } from '../../data/Consts';
-import shortid from 'shortid';
+import * as shortid from 'shortid';
 
 
 export default function CategoryModal({ close, select }) {
