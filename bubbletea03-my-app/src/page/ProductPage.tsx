@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import UserContent from '../component/product-page/UserContent';
 import UserItemList from '../component/product-page/UserItemList';
 import styled from 'styled-components';
-import BottomNav from '../component/product-page/BottomNav';
+import BottomNav from '../component/product-page/ProductBottomNav';
 import TopNav from '../component/TopNav';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';

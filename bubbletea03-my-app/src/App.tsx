@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './page/Home';
-import ProductPage from './page/ProductPage';
-import WritingPage from './page/WritingPage';
-import CategorySelect from './page/CategorySelect';
-import RegisterPage from './page/intro/RegisterPage';
+import { 
+	Home,
+	ProductPage,
+	WritingPage,
+	CategorySelect,
+	RegisterPage,
+	LoginPage,
+	Welcome,
+} from './page';
 import { createGlobalStyle } from 'styled-components';
-import LoginPage from './page/intro/LoginPage';
-import Welcome from './page/intro/Welcome';
 import DataManager from './DataManager';
 
 export default function App() {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function BottomNav() {
+export default function ProductBottomNav() {
     return (<>
         <Container>
             <img alt="빈 하트" src="/icon/heart.png"/>
