@@ -10,3 +10,8 @@ export const homeCategoryState = atom({
     key: 'homeCategoryState',
     default: '',
 })
+
+export const itemData = atom({
+    key: 'itemData',
+    default: [],
+})

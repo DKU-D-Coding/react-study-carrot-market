@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import { CATEGORY_LIST } from '../../data/Consts';
+import * as shortid from 'shortid';
 
 
 export default function CategoryModal({ close, select }) {
     return (
         <Container>
-            <Background onClick={close}/>
+            <Background onClick={close} />
             <Modal>
                 <Categories>
                     {
-                        CATEGORY_LIST.map((category, idx) => 
-                            <button onClick={() => {select(category); close();}} key={idx}>
+                        CATEGORY_LIST.map((category) =>
+                            <button onClick={() => { select(category); close(); }} key={shortid.generate()}>
                                 {category}
                             </button>
-                            )
+                        )
                     }
                 </Categories>
             </Modal>

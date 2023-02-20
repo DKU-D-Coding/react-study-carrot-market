@@ -13,7 +13,7 @@ export default function UserItemList({ userName }) {
             </HeaderBox>
             <ItemListBox>
                 {
-                    userItems.slice(0, 3).map((item, idx) => <ItemCard item={item} mode="item-list" key={idx}/>)
+                    userItems.slice(0, 3).map((item) => <ItemCard item={item} mode="item-list" key={item.id} />)
                     // 4개만 표시한다.
                 }
             </ItemListBox>

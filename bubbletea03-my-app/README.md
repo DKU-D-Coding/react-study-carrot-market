@@ -27,3 +27,7 @@
 ### 3주차
 - [[Recoil] Recoil 200% 활용하기](https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)
 - [디바운스(Debounce)와 스로틀(Throttle) 그리고 차이점](https://webclub.tistory.com/607)
+
+### 4주차
+- [npm react-cookie](https://www.npmjs.com/package/react-cookie)
+- [favicon.ico 오류 404 메시지 해결 방법](https://cheonfamily.tistory.com/7)
