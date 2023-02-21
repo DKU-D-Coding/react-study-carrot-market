@@ -9,7 +9,7 @@ export default function UserContent({ item }) {
             </ProfileBox>
             <PostBox>
                 <div>{item.title}</div>
-                <span>--카테고리--</span> <span>{item.updateTime}</span>
+                <span>--카테고리--</span> <span>{item.updateDate}</span>
                 <div>--본문내용--</div>
                 <div>관심 {item.likeCount}개</div>
             </PostBox>

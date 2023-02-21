@@ -37,7 +37,11 @@ export default function ProductPage() {
         <TopImage>
             <img alt="대표 이미지" src="https://media.istockphoto.com/id/1352173787/photo/sunset.jpg?b=1&s=170667a&w=0&k=20&c=jKDMxKXALm540OTFB3vMIDFYwOEedauorSpvLgjkU1M=" />
         </TopImage>
-        <UserContent item={targetItem} />
+        {
+            targetItem && <UserContent item={targetItem} />
+            //* 2023/02/21 ProductPage 먹통 오류 해결: targetItem이 존재할 때만 뜨게 하니까 해결됨.
+            //* 오류 원인 -> targetItem이 빈 값일 때 프로퍼티에 접근했기 때문.
+        }
         {/* <UserItemList userName={targetItem.sellerName} /> */}
         <BottomNav />
     </>);
