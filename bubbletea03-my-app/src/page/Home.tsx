@@ -6,7 +6,7 @@ import TopNav from "../component/TopNav";
 import { homeCategoryState } from "../RecoilStates";
 import { useRecoilValue } from 'recoil';
 import { itemData } from '../RecoilStates';
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 
@@ -18,7 +18,7 @@ export default function Home() {
     const [cookies] = useCookies(['accessToken']);
     const [likedItems, setLikedItems] = useState([]);
 
-    useEffect(() => {
+    useMemo(() => {
         axios({
             method: 'get',
             url: '/api/like/user',
@@ -52,7 +52,6 @@ export default function Home() {
                 // item.itemId
                 // item.itemId가 likedItems안에 포함되는가
                 let isLiked = Boolean(...likedItems.filter((likedItem) => likedItem.itemId === item.itemId));
-                console.log(likedItems.filter((likedItem) => likedItem.itemId === item.itemId), isLiked);
                 return <ItemCard item={item} mode="home" key={item.itemId} isLiked={isLiked} />
             })
         }

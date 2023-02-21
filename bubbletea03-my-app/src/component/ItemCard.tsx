@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface IProps {
     item: any; // 임시
@@ -13,11 +13,12 @@ interface IProps {
 export default function ItemCard({ item, mode, isLiked } : IProps) {
 
     const [cookies] = useCookies(['accessToken']);
-    const [currentLikeState, setLikeState] = useState(false);
+    const [currentLikeState, setLikeState] = useState(isLiked);
     // 고찰 결과: 부모 컴포넌트에서 isLiked가 바뀌면서 재렌더링을 했으나 위의 state는 업데이트 되지 않았다.
 
     useEffect(() => {
         setLikeState(isLiked);
+        console.log("이게 왜안돼")
     }, [])
 
     const handleLikeButton = function(e) {
@@ -58,7 +59,12 @@ export default function ItemCard({ item, mode, isLiked } : IProps) {
 
                     }
                 </button>
-                {item.likeCount}
+                {
+                    isLiked ?
+                        currentLikeState ? item.likeCount : item.likeCount - 1
+                        :
+                        currentLikeState ? item.likeCount + 1 : item.likeCount
+                }
             </LikeBox>
         </Container>
     );
