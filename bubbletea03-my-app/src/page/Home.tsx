@@ -6,14 +6,34 @@ import TopNav from "../component/TopNav";
 import { homeCategoryState } from "../RecoilStates";
 import { useRecoilValue } from 'recoil';
 import { itemData } from '../RecoilStates';
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 export default function Home() {
     window.scrollTo(0, 0);
 
     const homeCategory = useRecoilValue(homeCategoryState);
     const items = useRecoilValue(itemData);
+    const [cookies] = useCookies(['accessToken']);
+    const [likedItems, setLikedItems] = useState([]);
 
-    // 여기서 likeitems 만들어서 ItemCard로 보내주거나
+    useEffect(() => {
+        axios({
+            method: 'get',
+            url: '/api/like/user',
+            headers: {
+                'Authorization': 'Bearer ' + cookies.accessToken,
+            },
+        })
+        .then((response) => {
+            const likedItemsData = response.data.data.content;
+            setLikedItems(likedItemsData);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, [])
 
     return (<>
         <TopNav left={<h2>홈</h2>}
@@ -28,7 +48,13 @@ export default function Home() {
             // homeCategory ?
             //     itemData.filter((item) => item.category === homeCategory).map((item, idx) => <ItemCard item={item} mode="home" key={idx} />)
             //     :
-            items.map((item) => <ItemCard item={item} mode="home" key={item.itemId} />)
+            items.map((item) => {
+                // item.itemId
+                // item.itemId가 likedItems안에 포함되는가
+                let isLiked = Boolean(...likedItems.filter((likedItem) => likedItem.itemId === item.itemId));
+                console.log(likedItems.filter((likedItem) => likedItem.itemId === item.itemId), isLiked);
+                return <ItemCard item={item} mode="home" key={item.itemId} isLiked={isLiked} />
+            })
         }
         <BottomNav />
         <Link to="/writing">

@@ -24,7 +24,6 @@ export default function DataManager() {
             },
         })
             .then((response) => {
-                console.log(response);
                 let resultItemData = Array.from(response.data.data.content);
                 setItemData(resultItemData)
             })

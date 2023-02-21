@@ -2,12 +2,23 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function ItemCard({ item, mode }) {
+interface IProps {
+    item: any; // 임시
+    mode: string;
+    isLiked?: boolean;
+}
+
+export default function ItemCard({ item, mode, isLiked } : IProps) {
 
     const [cookies] = useCookies(['accessToken']);
-    const [currentLikeCount, setLikeCount] = useState(item.likeCount);
+    const [currentLikeState, setLikeState] = useState(false);
+    // 고찰 결과: 부모 컴포넌트에서 isLiked가 바뀌면서 재렌더링을 했으나 위의 state는 업데이트 되지 않았다.
+
+    useEffect(() => {
+        setLikeState(isLiked);
+    }, [])
 
     const handleLikeButton = function(e) {
         axios({
@@ -18,30 +29,12 @@ export default function ItemCard({ item, mode }) {
             },
         })
         .then((response) => {
-            console.log(response);
-            const isFirstLike = response.data.data;
-            if (isFirstLike)
-                setLikeCount(currentLikeCount + 1);
-            else
-                setLikeCount(currentLikeCount - 1);
+            const likeData = response.data.data;
+            setLikeState(likeData);
         })
         .catch((error) => {
             console.log(error);
         })
-
-        // axios({
-        //     method: 'get',
-        //     url: '/api/like/user',
-        //     headers: {
-        //         'Authorization': 'Bearer ' + cookies.accessToken,
-        //     },
-        // })
-        // .then((response) => {
-        //     console.log(response);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // });
     }
 
     return (
@@ -57,9 +50,15 @@ export default function ItemCard({ item, mode }) {
             </Link>
             <LikeBox>
                 <button onClick={handleLikeButton}>
-                    <img alt="빈 하트" src="/icon/heart.png"/>
+                    {
+                        currentLikeState ?
+                            <img alt="꽉 찬 하트" src="/icon/filled_heart.png"/>
+                            :
+                            <img alt="빈 하트" src="/icon/empty_heart.png"/>
+
+                    }
                 </button>
-                {currentLikeCount}
+                {item.likeCount}
             </LikeBox>
         </Container>
     );

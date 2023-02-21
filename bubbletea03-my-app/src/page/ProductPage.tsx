@@ -15,11 +15,9 @@ export default function ProductPage() {
     const items = useRecoilValue(itemData);
     const [targetItem, setTargetItem] = useState({});
 
-    // ! useEffect 안에서의 state 업데이트 기준(?)이 약간 이상한 것 같다
-    // ! DataManager에서 itemData를 변경하면 여기에 바로 적용이 돼야되는 거 아닌가
     useEffect(() => {
         console.log(items);
-        let [idMatchedItem] = items.filter((item) => item.itemId == params.itemId);
+        let [idMatchedItem] = items.filter((item) => item.itemId === Number(params.itemId));
         console.log(idMatchedItem);
         setTargetItem(idMatchedItem);
     }, [items]);
