@@ -13,6 +13,8 @@ export default function Home() {
     const homeCategory = useRecoilValue(homeCategoryState);
     const items = useRecoilValue(itemData);
 
+    // 여기서 likeitems 만들어서 ItemCard로 보내주거나
+
     return (<>
         <TopNav left={<h2>홈</h2>}
             right={
