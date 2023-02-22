@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function BottomNav() {
+export default function HomeBottomNav() {
     return (
         <Container>
             <button>

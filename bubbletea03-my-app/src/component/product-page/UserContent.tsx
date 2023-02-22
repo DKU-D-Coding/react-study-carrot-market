@@ -5,13 +5,13 @@ export default function UserContent({ item }) {
         <>
             <ProfileBox>
                 <img alt="사람 아이콘" src="/icon/person_profile.png" />
-                <div>{item.sellerName}</div>
+                <div>--유저 이름--</div>
             </ProfileBox>
             <PostBox>
                 <div>{item.title}</div>
-                <span>{item.category}</span> <span>{item.postTime}</span>
-                <div>{item.content}</div>
-                <div>관심</div>
+                <span>--카테고리--</span> <span>{item.updateDate}</span>
+                <div>--본문내용--</div>
+                <div>관심 {item.likeCount}개</div>
             </PostBox>
         </>
     );

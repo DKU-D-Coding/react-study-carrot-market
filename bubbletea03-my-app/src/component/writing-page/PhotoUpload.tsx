@@ -1,38 +1,37 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import * as shortid from 'shortid';
 
 
-
-export default function PhotoUpload({ imgUrlArr, setImgUrlArr }) {
-    const uploadImages = function(e) {
+export default function PhotoUpload({ files, setFiles }) {
+    const uploadImages = function (e : React.ChangeEvent<HTMLInputElement>) {
         Object.values(e.target.files).forEach(file => {
             const reader = new FileReader();
-            reader.onloadend = () => { setImgUrlArr([...imgUrlArr, reader.result]) };
             reader.readAsDataURL(file);
+            reader.onloadend = () => { setFiles([...files, reader.result]) };
         });
         console.log("파일 경로: " + e.target.value);
         e.target.value = ''; // onChange에서 항상 작동해야 하기 때문에, value를 초기화한다.
     }
 
-    const deleteImg = function(targetIndex) {
-        setImgUrlArr(imgUrlArr.filter((_, idx) => (idx !== targetIndex)))
+    const deleteImg = function (targetIndex) {
+        setFiles(files.filter((_, idx) => (idx !== targetIndex)))
     }
 
     return (
         <Container>
             <Label>
-                <Img alt="카메라" src='/icon/camera.png'/>
-                <input type="file" accept="image/*" onChange={uploadImages} multiple/>
+                <Img alt="카메라" src='/icon/camera.png' />
+                <input type="file" accept="image/*" onChange={uploadImages} multiple />
             </Label>
             {
-                imgUrlArr.map((url, idx) =>
-                    <div key={idx}>
-                        <Img alt="업로드한 이미지" src={url}/>
+                files.map((url, idx) =>
+                    <div key={shortid.generate()}>
+                        <Img alt="업로드한 이미지" src={url} />
                         <DeleteBtn onClick={() => { deleteImg(idx) }}>
-                            <img alt="닫기 버튼" src="/icon/close.png"/>
+                            <img alt="닫기 버튼" src="/icon/close.png" />
                         </DeleteBtn>
                     </div>
-                    )
+                )
             }
         </Container>
     )

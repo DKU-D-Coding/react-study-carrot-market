@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function BottomNav() {
+export default function ProductBottomNav() {
     return (<>
         <Container>
-            <img alt="빈 하트" src="/icon/heart.png"/>
+            <img alt="빈 하트" src="/icon/empty_heart.png"/>
             <div>
                 <h3>가격</h3>
             </div>
