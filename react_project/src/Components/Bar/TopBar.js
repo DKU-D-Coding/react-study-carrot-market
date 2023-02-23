@@ -2,7 +2,7 @@ import { faArrowLeft, faBars, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { selectCategoryAtom } from "../../State/atom";
 
 const Bar = styled.div`
@@ -25,11 +25,14 @@ const Title = styled.h2`
     font-size: 24px;
     margin: 0;
     align-self: center;
-    .centeredTitle>& {
-        text-align:center;
-        width: 100%;
-        font-size: 1.7rem;
-    }
+    ${ props => 
+        props.centeredTitle && 
+        css`
+            text-align:center; 
+            width: 100%; 
+            font-size: 1.7rem;
+        `
+    };
 `
 const CompleteBtn = styled.button`
     color: #FF931E;
@@ -40,48 +43,52 @@ const CompleteBtn = styled.button`
     margin: 0;
 `
 const LeftSpace = styled.div`
-    &.hidden {
-        display: none;
-    }
+    ${ props => props.hidden && css`display: none;`}
     .homeMargin {
         margin-left: 20px;
     }
 `
-function TopBar(props){
+function TopBar({
+        centeredTitle, 
+        previousBtn, 
+        homeBtn,
+        title,
+        completeBtn,
+        menuBtn
+    }){
     const navigate = useNavigate();
     const [categoryFilter, setCategoyFilter] = useRecoilState(selectCategoryAtom);
     const homeClick = () => {
         setCategoyFilter("")
     }
     return(
-        <Bar className={(props.centeredTitle)?"centeredTitle":""}>
-            <LeftSpace className={(props.previousBtn||props.homeBtn)?"both":"hidden"}>
-                {(props.previousBtn)?
+        <Bar>
+            <LeftSpace hidden={!(previousBtn||homeBtn)}>
+                {(previousBtn) &&
                     <button onClick={() => {navigate(-1)}}>
                         <FontAwesomeIcon icon={faArrowLeft}/>
-                    </button> : ""
+                    </button>
                 }
-                {(props.homeBtn)?
+                {(homeBtn) &&
                     <Link to="/">
                         <FontAwesomeIcon className={categoryFilter?"":"homeMargin"} icon={faHome} onClick={homeClick}/>
-                    </Link> : ""
+                    </Link>
                 } 
             </LeftSpace>
-            {(props.title)?
-                <Title>
-                    {props.title}
-                </Title> : ""
+            {(title) &&
+                <Title centeredTitle={centeredTitle}>
+                    {title}
+                </Title>
             }
-            {(props.completeBtn)?
+            {(completeBtn) &&
                 <CompleteBtn>
                     완료
-                </CompleteBtn> : ""
+                </CompleteBtn>
             }            
-            {(props.menuBtn)?
+            {(menuBtn) &&
                 <Link to="/category">
                     <FontAwesomeIcon icon={faBars}/>
                 </Link>
-                :""
             }
         </Bar>
     )

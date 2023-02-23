@@ -7,6 +7,10 @@ import ProductBottomBar from '../Components/Product/ProductBottomBar';
 import styled from 'styled-components';
 import UserGoods from '../Components/Product/UserGoods';
 import EmptyImg from '../assets/image/no_img.jpg';
+
+const Container = styled.div`
+
+`
 const ProductDetail = styled.div`
   padding: 20px;
   font-size: 20px;
@@ -28,10 +32,10 @@ const carouselItems = [
 
 function Product() {
     return(
-        <>
+        <Container>
           <TopBar
-            previousBtn={true}
-            homeBtn={true}
+            previousBtn
+            homeBtn
           />
           <Carousel>
             {carouselItems.map( (item,index) => 
@@ -64,7 +68,7 @@ function Product() {
           </ProductDetail>
           <UserGoods/>
           <ProductBottomBar/>
-        </>
+        </Container>
     )
 }
 

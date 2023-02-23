@@ -9,10 +9,6 @@ const Card = styled.div`
         padding-left: 20px;
         margin: 0;
     }
-    ul {
-        margin: 0;
-        padding: 0!important;
-    }
 `
 
 function UserCard({ goodsId, imgSrc, title, price }){

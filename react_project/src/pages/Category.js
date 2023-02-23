@@ -32,7 +32,7 @@ function Category(){
     }
     return (
         <Container>
-            <TopBar previousBtn={true} title="중고거래 카테고리" centeredTitle={true}/>
+            <TopBar previousBtn title="중고거래 카테고리" centeredTitle />
             <CategoryList>
                 {categoryList.map(item => 
                     <CategoryItem 

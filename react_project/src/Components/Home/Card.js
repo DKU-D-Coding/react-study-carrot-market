@@ -59,18 +59,18 @@ const Like = styled.p`
     text-align: right;
     font-size: 25px;
 `
-function Card({ goodsId, imgSrc, title, price, like, categoryName }) {
+function Card({ itemId, url, title, price, likeCount, categoryName }) {
     return (
             <CardBox>
-                <Link to={'/product/' + goodsId}>
-                    <img src={imgSrc}/>
+                <Link to={'/product/' + itemId}>
+                    <img src={url} alt="Goods Thumbnail"/>
                     <CardDetail>
                         <CardTopDetail>
                             <Title>{title}</Title>
                             <Category>{categoryName}</Category>
                             <Price>{price}원</Price>
                         </CardTopDetail>
-                        <Like><FontAwesomeIcon icon={faHeart}/> {like}</Like>
+                        <Like><FontAwesomeIcon icon={faHeart}/> {likeCount}</Like>
                     </CardDetail>
                 </Link>
             </CardBox>

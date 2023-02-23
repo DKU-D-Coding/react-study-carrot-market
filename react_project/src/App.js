@@ -12,8 +12,7 @@ import SignUp from './pages/SignUp';
 import { LoginStateAtom } from './State/LoginState';
 
 function App() {
-  const isLoggedIn = useRecoilValue(LoginStateAtom);
-
+  const isLoggedIn = useRecoilValue(LoginStateAtom).state;
   return (
       <Router>
         <ScrollToTop />

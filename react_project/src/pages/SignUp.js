@@ -88,15 +88,8 @@ function SignUp(){
             headers: { 
             'Content-Type': 'application/json'
             },
-            data: JSON.stringify({
-                email: inputState.email,
-                pw: inputState.pw,
-                name: inputState.name,
-                phone: inputState.phone,
-                nickName: inputState.nickName
-            })
+            data: JSON.stringify(inputState)
         }).then((response) => {
-            console.log(response.data);
             setIsLoggedIn((prevState) => ({
                 ...prevState,
                 state: true,
@@ -120,24 +113,8 @@ function SignUp(){
         nickName: ''
     });
     const onInput = (e) => {
-        const inputName = e.target.name
-        switch(inputName) {
-            case 'email': 
-                trigger('email')
-                break
-            case 'pw' : 
-                trigger('pw')
-                break
-            case 'name' : 
-                trigger('name')
-                break
-            case 'phone' : 
-                trigger('phone')
-                break
-            case 'nickName' : 
-                trigger('nickName')
-                break
-        }
+        const inputName = e.target.name;
+        trigger(inputName);
         setInputState((prevState) => ({
             ...prevState,
             [inputName]: e.target.value

@@ -46,14 +46,14 @@ const LinkContainer = styled.div`
 function MyPage(){
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginStateAtom)
-    const nickName = useRecoilValue(LoginStateAtom).nickName
+    const { nickName } = useRecoilValue(LoginStateAtom)
     const logoutHandler = () => {
         setIsLoggedIn(false)
         navigate('/')
     }
     return(
         <>
-            <TopBar title="나의 당근" menuBtn={true}/>
+            <TopBar title="나의 당근" menuBtn/>
             <Container>
                 <NickNameContainer>
                     <span>

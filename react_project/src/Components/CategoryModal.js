@@ -44,20 +44,20 @@ function CategoryModal(props){
     },[selectCategory])
     return(
         <>
-            { props.visibility?
+            { props.visibility &&
                 <>
                 <Background onClick={cancleModal}/> 
                 <Modal>
-                    {categoryList.map((item,index) =>
+                    {categoryList.map((item) =>
                         <List 
-                            key={index} 
+                            key={item.key} 
                             onClick={selectCategory}
                         >
                             {item.categoryName}
                         </List>
                     )}
                 </Modal> 
-                </>:"" 
+                </>
             }
         </>
     )

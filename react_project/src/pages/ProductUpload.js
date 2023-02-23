@@ -132,7 +132,7 @@ function ProductUpload(){
         }
     }   
     const removeImg = (event) => {
-        const selected = urlArray.findIndex(function(data){ return data === event.target.classList[0]})
+        const selected = urlArray.findIndex((data) => data === event.target.classList[0])
         setUrlArray(prev => prev.filter((_,index) => index !== selected ))
     }
     useEffect(()=>{
@@ -142,8 +142,8 @@ function ProductUpload(){
         <>
             <TopBar 
                 title="중고거래 글쓰기"
-                previousBtn={true}
-                completeBtn={true}
+                previousBtn
+                completeBtn
             />
             <ImgContainer>
                 <ImgUploadBtn>
@@ -174,7 +174,7 @@ function ProductUpload(){
                 <Input placeholder="제목" type="text"/>
             </InputContainer>
             <InputContainer>
-                <span>{cateResult?cateResult:"카테고리"}</span>
+                <span>{cateResult||"카테고리"}</span>
                 <CategoryBtn type="button" value="v" onClick={categoryClick}/>
             </InputContainer>        
             <InputContainer>
